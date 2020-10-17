@@ -29,7 +29,7 @@
                     <li><a href="#">New Recipe</a></li>
                     <li><a href="#">Categories</a></li>
                     <li><a href="#">Log Out</a></li>
-                    <li><a href="#">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
 				</ul>
 			</div>
@@ -43,7 +43,7 @@
             <li class="center-align"><a href="#">New Recipe</a></li>
             <li class="center-align"><a href="#">Categories</a></li>
             <li class="center-align"><a href="#">Log Out</a></li>
-            <li class="center-align"><a href="#">Log In</a></li>
+            <li class="center-align"><a href="{{ url_for('login') }}">Log In</a></li>
             <li class="center-align"><a href="{{ url_for('register') }}">Register</a></li>
 		</ul>
 	</header>
