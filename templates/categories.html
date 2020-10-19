@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-green-text text-darken-4 center-align">Categories</h3>
+
+    <div class="row">
+        {% for category in categories %}
+            <div class="col s12 m3">
+                <div class="card text-shadow center-align">
+                    <div class="card-image">
+                        <img src="../../soups.jpg" alt="this is a soup">
+                        <span class="card-title">{{ category.category_name }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                        Soups
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

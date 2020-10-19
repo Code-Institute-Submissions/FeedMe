@@ -161,6 +161,13 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# Categories
+@app.route("/categories")
+def categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+
+
 # telling the app how and where to run the application
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
