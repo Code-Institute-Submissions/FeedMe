@@ -44,7 +44,11 @@
             <div class="collapsible-body">
                 <strong>{{ recipe.category_name }}</strong>
                 <p>{{ recipe.recipe_description }}</p>
-                <p><em>by: {{ recipe.created_by }}</em></p>
+                <i class="fas fa-apple-alt prefix light-green-text text-darken-4"></i><strong>Ingredients:</strong>
+                <p>{{ recipe.recipe_ingredients }}</p>
+                <i class="fas fa-mitten prefix light-green-text text-darken-4"></i><strong>Method:</strong>
+                <p>{{ recipe.recipe_method }}</p>
+                <p><strong><em>by: {{ recipe.created_by }}</em></strong></p>
             </div>
         </li>
         {% endfor %}

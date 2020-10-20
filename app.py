@@ -39,6 +39,7 @@ def search():
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
 
+
 # Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -126,6 +127,8 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
             "favorite": favorite,
             "date": request.form.get("date"),
             "created_by": session["user"]
@@ -147,6 +150,8 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
             "favorite": favorite,
             "date": request.form.get("date"),
             "created_by": session["user"]
