@@ -105,7 +105,7 @@ def profile(username):
 def logout():
     # informing the user that they've been logged out
     flash("You're now logged out")
-    #removing session cookies
+    # removing session cookies
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -144,7 +144,7 @@ def edit_recipe(recipe_id):
             "date": request.form.get("date"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)},submit)
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("You're recipe was successfully updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -166,6 +166,20 @@ def delete_recipe(recipe_id):
 def categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+# Add Category
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("categories"))
+
+    return render_template("add_category.html")
 
 
 # telling the app how and where to run the application
