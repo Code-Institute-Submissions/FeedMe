@@ -25,6 +25,12 @@ mongo = PyMongo(app)
 
 # Homepage
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+# All Recipes
 @app.route("/get_recipes")
 def get_recipes():
     # convert the cursor object into a list

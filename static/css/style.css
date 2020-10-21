@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700|family=Gotu:100,200,300,400,500,600,700|family=Montserrat:100,200,300,400,500,600,700|family=Gochi Hand:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+html {
+    overflow-y: hidden;
+}
+
+-------------------------------------------------
+
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5)
 }
@@ -13,4 +28,41 @@
 .collapsible-header .col strong{
     margin: 5px;
     line-height: 42px;
+}
+
+/* ----------------------------------------------- Homepage --- */
+
+.home-img {
+  height: 100vh;
+  background: url(../images/cookbook.jpg) no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.caption h1 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: "Varela Round", sans-serif;
+    text-transform: uppercase;
+}
+
+hr {
+  border: 1px solid white;
+}
+
+.caption h3 {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding-top: 10px;
+  margin-bottom: 60px;
+  word-spacing: 3px;
+  text-transform: uppercase;
 }
