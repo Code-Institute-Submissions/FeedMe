@@ -153,3 +153,19 @@ hr {
   color:  #ffa083;
   border: 1px solid white;
 }
+
+
+/* ----------------------------------------------- Login Form --- */
+
+.card-panel{
+    border-radius: 25px;
+}
+
+.input-field .prefix{
+    color: #ffa083;
+}
+
+.login{
+    height: 100vh;
+    background-color: red;
+}

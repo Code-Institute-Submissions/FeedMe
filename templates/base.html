@@ -24,16 +24,19 @@
 				<a href="{{ url_for('home') }}" class="brand-logo"><i class="fas fa-cookie-bite left"></i>FeedMe</a>
 				<a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('home') }}">Home</a></li>
+                    <!-- IF THE USER IS LOGGED IN -->
                     {% if session.user %}
                         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                        <!-- IF THE USER IS THE ADMIN -->
                         {% if session.user|lower == "admin"|lower %}
                             <li><a href="{{ url_for('categories') }}">Categories</a></li>
                         {% endif %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
+                        <!-- IF THE USER IS LOGGED OUT -->
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
@@ -44,16 +47,19 @@
         <!-- Mobile side Navigation Bar -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-green-text text-darken-4">FeedMe</h4></li>
-			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<!-- IF THE USER IS LOGGED IN -->
             {% if session.user %}
                 <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                <!-- IF THE USER IS THE ADMIN -->
                 {% if session.user|lower == "admin"|lower %}
                     <li><a href="{{ url_for('categories') }}">Categories</a></li>
                 {% endif %}
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
+                <!-- IF THE USER IS LOGGED OUT -->
+                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
@@ -73,55 +79,56 @@
         {% endwith %}
     </section>
 
-    <main class="container">
+    <main>
         {% block content %}
-        {% endblock %}
-    </main>
-
-    <div>
-        <div class="home-img">
-            <div class="row">
-                <div class="col s12 center-align">
-                    <div class="caption text-center">
-                        <h1>your cookbook in your pocket</h1>
-                        <hr>
-                        <h3>share and find recipes with the world</h3>
-                        <a class="btn btn-light btn-lg" href="{{ url_for('get_recipes') }}">Start</a>
+            <div>
+                <div class="home-img">
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <div class="caption text-center">
+                                <h1>your cookbook in your pocket</h1>
+                                <hr>
+                                <h3>share and find recipes with the world</h3>
+                                <a class="btn btn-light btn-lg" href="{{ url_for('login') }}">Start</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row social-links">
+                        <div class="col s12">
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/">
+                                        <i class="fab fa-facebook"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.instagram.com/">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/">
+                                        <i class="fab fa-twitter"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.pinterest.com/">
+                                        <i class="fab fa-pinterest"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row social-links">
-                <div class="col s12">
-                    <ul>
-                        <li>
-                            <a target="_blank" href="https://www.facebook.com/">
-                                <i class="fab fa-facebook"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.instagram.com/">
-                                <i class="fab fa-instagram"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://twitter.com/">
-                                <i class="fab fa-twitter"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.pinterest.com/">
-                                <i class="fab fa-pinterest"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        {% endblock %}
+    </main>
+
+    
     
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
