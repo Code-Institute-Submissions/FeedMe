@@ -4,12 +4,13 @@
 body {
   overflow-x: hidden;
   font-family: "Lato", sans-serif;
-  color: white;
 }
 
 html {
     overflow-y: hidden;
 }
+
+
 
 -------------------------------------------------
 
@@ -71,6 +72,7 @@ nav ul a{
     font-weight: 700;
     font-family: "Varela Round", sans-serif;
     text-transform: uppercase;
+    color: white;
 }
 
 hr {
@@ -85,6 +87,7 @@ hr {
   margin-bottom: 60px;
   word-spacing: 3px;
   text-transform: uppercase;
+  color: white;
 }
 
 .btn-lg {
@@ -157,15 +160,24 @@ hr {
 
 /* ----------------------------------------------- Login Form --- */
 
+h3 {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding-top: 10px;
+  word-spacing: 3px;
+  text-transform: uppercase;
+  color: black;
+}
+
+p .center .align .no-account{
+    color: black;
+}
+
 .card-panel{
     border-radius: 25px;
 }
 
-.input-field .prefix{
+.input-field #username{
     color: #ffa083;
-}
-
-.login{
-    height: 100vh;
-    background-color: red;
 }

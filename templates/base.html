@@ -46,22 +46,22 @@
 
         <!-- Mobile side Navigation Bar -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-green-text text-darken-4">FeedMe</h4></li>
+            <li><h4 class="center-align deep-orange-text text-lighten-2">FeedMe</h4></li>
 			<!-- IF THE USER IS LOGGED IN -->
             {% if session.user %}
-                <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                <li class="center-align"><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+                <li class="center-align"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li class="center-align"><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                 <!-- IF THE USER IS THE ADMIN -->
                 {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('categories') }}">Categories</a></li>
+                    <li class="center-align"><a href="{{ url_for('categories') }}">Categories</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li class="center-align"><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <!-- IF THE USER IS LOGGED OUT -->
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li class="center-align"><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="center-align"><a href="{{ url_for('login') }}">Log In</a></li>
+                <li class="center-align"><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
 		</ul>
 	</header>
@@ -72,7 +72,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="light-green lighten-4 center-align">{{ message }}</h4>
+                        <h4 class="deep-orange accent-1 center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
