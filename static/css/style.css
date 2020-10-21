@@ -66,3 +66,70 @@ hr {
   word-spacing: 3px;
   text-transform: uppercase;
 }
+
+.btn-lg {
+  font-weight: bold;
+  border-radius: 23px;
+  width: 160px;
+}
+
+.btn-light {
+  color: white;
+  background-color: #ffa083;
+  border-color: #ffa083;
+
+  transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.btn:hover {
+  background-color:white;
+  color: #ffa083;
+  border: 1px solid white;
+}
+
+.social-links{
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    margin-right: 60px;
+    top: 29%;
+    font-size: 20px;
+    z-index: 1;
+    }
+
+.social-links a{
+    color: white;
+    text-align: center;
+}
+
+.social-links ul{
+    margin-right: 0px;
+}
+
+.social-links li{
+    padding-bottom: 20px;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 25px;
+    line-height: 7px;
+    
+    
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+  background-color:white;
+  color:  #ffa083;
+  border: 1px solid white;
+}
