@@ -30,6 +30,26 @@ html {
     line-height: 42px;
 }
 
+
+/* ----------------------------------------------- Navigation bar --- */
+
+nav .brand-logo{
+    font-family: "Varela Round", sans-serif;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+}
+
+.brand-logo .fa-cookie-bite{
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+nav ul a{
+    font-family: "Varela Round", sans-serif;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
 /* ----------------------------------------------- Homepage --- */
 
 .home-img {
