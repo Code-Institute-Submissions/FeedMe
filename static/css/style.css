@@ -178,7 +178,8 @@ p .center .align .no-account{
     border-radius: 25px;
 }
 
-.input-field #username{
+.input-field #username,
+div.input-field.col.s12 #password{
     font-family: 'Varela Round';
 }
 
@@ -196,4 +197,8 @@ p .center .align .no-account{
 
 .btn-large{
     font-family: "Varela Round", sans-serif;
+}
+
+.deep-orange-text.text-darken-4{
+    font-weight: 600;
 }
