@@ -202,3 +202,7 @@ div.input-field.col.s12 #password{
 .deep-orange-text.text-darken-4{
     font-weight: 600;
 }
+
+p.center.align{
+    margin-top: 0px;
+}
