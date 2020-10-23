@@ -12,7 +12,7 @@ html {
 
 
 
--------------------------------------------------
+/* ------------------------------------------------- */
 
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5)
@@ -107,7 +107,7 @@ hr {
     -o-transition: all 0.35s ease-in-out;
 }
 
-.btn:hover {
+.btn-light:hover {
   background-color:white;
   color: #ffa083;
   border: 1px solid white;
@@ -216,4 +216,40 @@ p.center.align{
 .card .card-content .card-title{
     font-family: "Varela Round", sans-serif;
     color: black;
+}
+
+/* ----------------------------------------------- RECIPE --- */
+
+.recipe{
+    margin-top: 50px;
+    font-family: "Varela Round", sans-serif;
+    font-size: initial;
+}
+
+.btn-recipe{
+    font-weight: bold;
+    border-radius: 23px;
+    width: 100px;
+}
+
+a#edit.btn.btn-recipe{
+    background-color: #4db6ac;
+    color: white;
+}
+
+a#delete.btn.btn-recipe{
+    color: white;
+    background-color: #c62828;
+}
+
+a#edit.btn:hover {
+  background-color:white;
+  color: #4db6ac;
+  border: 1px solid white;
+}
+
+a#delete.btn:hover {
+  background-color:white;
+  color: #ff3d00;
+  border: 1px solid white;
 }

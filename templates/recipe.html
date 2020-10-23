@@ -1,74 +1,67 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="row container">
 <h3 class="center-align">{{ recipe.recipe_name }}</h3>
+
+<div class="row container recipe">
     <div class="col s12 m6">
-        <img src="static/images/soups.jpg" alt="{{ recipe.recipe_name }}" />
+        <img src="{{url_for('static', filename='images/soups.jpg')}}" alt="{{ recipe.recipe_name }}">
     </div>
+
+    <!-- Recipe Fields -->
     <div class="col s12 m6">
         <div>
-            Category: {{ recipe.category_name }}
+            <b>Category:</b> {{ recipe.category_name }}
         </div>
         <br />
         <div>
-            Ingredients: {{ recipe.recipe_ingredients }}
+            <b>Ingredients:</b> {{ recipe.recipe_ingredients }}
         </div>
         <br />
         <div>
-           Method: {{ recipe.recipe_method }}
+           <b>Method:</b> {{ recipe.recipe_method }}
         </div>
         <br />
         <div>
-            Tools: {{ recipe.recipe_tools }}</div>
-        <br />
-        <div class="created-by maroon">
-            <em>Created by: {{ recipe.created_by }}</em>
+            <b>Tools:</b> {{ recipe.recipe_tools }}
         </div>
         <br />
-        <button href="#share" class="btn-flat modal-trigger">
-            <i class="fas fa-share-alt"></i>
-        </button>
+        <div>
+            <b>Date:</b> {{ recipe.date }}
+        </div>
+        <br />
+        <div>
+            <b>Created by:</b> <em>{{ recipe.created_by }}</em>
+        </div>
+        <br />
+
+        <!-- Buttons -->
+
+        <!-- Return Button -->
         <div class="col s12 center-align">
-            <div class="col s4"><a href="{{ url_for('get_recipes') }}" class="btn neutral">Go back</a></div>
+            <div class="col s4"><a href="{{ url_for('profile', username=session['user']) }}"
+                class="btn btn-light btn-recipe">Recipes</a></div>
             {% if session.user|lower == recipe.created_by|lower %}
-            <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral">Edit</a></div>
-            <div class="col s4"><a href="#delete-this" class="btn neutral red modal-trigger">Delete</a></div>
+                <!-- Edit Button -->
+                <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit"
+                    class="btn btn-recipe">Edit</a></div>
+                <!-- Delete Button -->
+                <div class="col s4"><a href="#delete-this" id="delete" class="btn btn-recipe">Delete</a></div>
 
-            <div id="delete-this" class="modal">
-                <div class="modal-question-wrapper">
-                    <div class="modal-question">
-                        <p>
-                            Are you absolutely and definitely sure you do not need this recipe in your book? Even Salmon of Wisdom will not be able to bring it back
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn-small neutral red modal-close">Delete</a>
-                        <a class="btn-small neutral blue modal-close">Cancel</a>
+                <div id="delete-this" class="modal">
+                    <div>
+                        <div>
+                            <p>
+                                Are you sure you want to delete this recipe?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+                                class="btn-small neutral red modal-close">Delete</a>
+                            <a class="btn-small neutral blue modal-close">Cancel</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
             {% endif %}
-        </div>
-    </div>
-
-    <div id="share" class="modal transparent" style="width: 180px;">
-        <div class="modal-question-wrapper">
-            <div class="modal-question">
-                <!-- AddToAny BEGIN -->
-                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                    <a class="a2a_button_facebook"></a>
-                    <a class="a2a_button_twitter"></a>
-                    <a class="a2a_button_email"></a>
-                    <a class="a2a_button_whatsapp"></a>
-                </div>
-                <script async src="https://static.addtoany.com/menu/page.js"></script>
-                <!-- AddToAny END -->
-            </div>
-            <div class="modal-footer transparent">
-                <a class="btn-small neutral blue modal-close">Cancel</a>
-            </div>
         </div>
     </div>
 </div>

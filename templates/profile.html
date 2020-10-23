@@ -27,7 +27,7 @@
         <div class="col s12 m3">
             <div class="card">
                 <div class="card-image">
-                    <img src="static/images/soups.jpg" alt="{{ recipe.recipe_name }}">
+                    <img src="{{url_for('static', filename='images/soups.jpg')}}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div class="card-content">
                     <a href="{{url_for('recipe', recipe_id=recipe._id)}}"><span class="card-title">{{ recipe.recipe_name }}</span></a>
