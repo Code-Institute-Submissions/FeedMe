@@ -3,22 +3,13 @@
 <h3 class="center-align">{{ recipe.recipe_name }}</h3>
 
 <div class="row container recipe">
-    <div class="col s12 m6">
+    <div class="col s12 m8">
         <img src="{{url_for('static', filename='images/soups.jpg')}}" alt="{{ recipe.recipe_name }}">
     </div>
-
-    <!-- Recipe Fields -->
-    <div class="col s12 m6">
+<div class="row container">
+    <div class="col s12 m4 l4">
         <div>
             <b>Category:</b> {{ recipe.category_name }}
-        </div>
-        <br />
-        <div>
-            <b>Ingredients:</b> {{ recipe.recipe_ingredients }}
-        </div>
-        <br />
-        <div>
-           <b>Method:</b> {{ recipe.recipe_method }}
         </div>
         <br />
         <div>
@@ -31,6 +22,19 @@
         <br />
         <div>
             <b>Created by:</b> <em>{{ recipe.created_by }}</em>
+        </div>
+        <br />
+    </div>
+</div>
+
+    <!-- Recipe Fields -->
+    <div class="col s12 m12">
+        <div>
+            <b>Ingredients:</b> {{ recipe.recipe_ingredients }}
+        </div>
+        <br />
+        <div>
+           <b>Method:</b> {{ recipe.recipe_method }}
         </div>
         <br />
 
