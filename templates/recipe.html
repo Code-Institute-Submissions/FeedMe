@@ -1,25 +1,25 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="row container" style="margin-top: 60px;">
+<div class="row container">
+<h3 class="center-align">{{ recipe.recipe_name }}</h3>
     <div class="col s12 m6">
-        <img class="responsive-img image-shadow image" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
+        <img src="static/images/soups.jpg" alt="{{ recipe.recipe_name }}" />
     </div>
-    <div class="col s12 m6 recipe">
-        <h5 class="name maroon text-shadow">{{ recipe.recipe_name }}</h5>
-        <br />
-        <div class="ingredients maroon">
-            What you will need: {{ recipe.ingredients_list }}
+    <div class="col s12 m6">
+        <div>
+            Category: {{ recipe.category_name }}
         </div>
         <br />
-        <div class="center-align"><img class="chef center-align" width="30" 
-        src="https://res.cloudinary.com/dugnokxox/image/upload/v1600807724/Logo/chef_rbminz.png" alt="chef" /></div><br>
-        <div class="method maroon">How to make it: {{ recipe.method }}</div>
-        <br />
-        <div class="prep-time maroon">
-            Preparation time: {{ recipe.preparation_time }}
+        <div>
+            Ingredients: {{ recipe.recipe_ingredients }}
         </div>
         <br />
-        <div class="difficulty maroon">Difficulty: {{ recipe.difficulty }}</div>
+        <div>
+           Method: {{ recipe.recipe_method }}
+        </div>
+        <br />
+        <div>
+            Tools: {{ recipe.recipe_tools }}</div>
         <br />
         <div class="created-by maroon">
             <em>Created by: {{ recipe.created_by }}</em>
