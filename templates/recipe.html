@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row container" style="margin-top: 60px;">
+    <div class="col s12 m6">
+        <img class="responsive-img image-shadow image" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}" />
+    </div>
+    <div class="col s12 m6 recipe">
+        <h5 class="name maroon text-shadow">{{ recipe.recipe_name }}</h5>
+        <br />
+        <div class="ingredients maroon">
+            What you will need: {{ recipe.ingredients_list }}
+        </div>
+        <br />
+        <div class="center-align"><img class="chef center-align" width="30" 
+        src="https://res.cloudinary.com/dugnokxox/image/upload/v1600807724/Logo/chef_rbminz.png" alt="chef" /></div><br>
+        <div class="method maroon">How to make it: {{ recipe.method }}</div>
+        <br />
+        <div class="prep-time maroon">
+            Preparation time: {{ recipe.preparation_time }}
+        </div>
+        <br />
+        <div class="difficulty maroon">Difficulty: {{ recipe.difficulty }}</div>
+        <br />
+        <div class="created-by maroon">
+            <em>Created by: {{ recipe.created_by }}</em>
+        </div>
+        <br />
+        <button href="#share" class="btn-flat modal-trigger">
+            <i class="fas fa-share-alt"></i>
+        </button>
+        <div class="col s12 center-align">
+            <div class="col s4"><a href="{{ url_for('get_recipes') }}" class="btn neutral">Go back</a></div>
+            {% if session.user|lower == recipe.created_by|lower %}
+            <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit" class="btn green neutral">Edit</a></div>
+            <div class="col s4"><a href="#delete-this" class="btn neutral red modal-trigger">Delete</a></div>
+
+            <div id="delete-this" class="modal">
+                <div class="modal-question-wrapper">
+                    <div class="modal-question">
+                        <p>
+                            Are you absolutely and definitely sure you do not need this recipe in your book? Even Salmon of Wisdom will not be able to bring it back
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn-small neutral red modal-close">Delete</a>
+                        <a class="btn-small neutral blue modal-close">Cancel</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="share" class="modal transparent" style="width: 180px;">
+        <div class="modal-question-wrapper">
+            <div class="modal-question">
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    <a class="a2a_button_facebook"></a>
+                    <a class="a2a_button_twitter"></a>
+                    <a class="a2a_button_email"></a>
+                    <a class="a2a_button_whatsapp"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
+            </div>
+            <div class="modal-footer transparent">
+                <a class="btn-small neutral blue modal-close">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

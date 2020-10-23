@@ -181,6 +181,13 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# single recipe
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
+
+
 # Categories
 @app.route("/categories")
 def categories():

@@ -7,7 +7,7 @@ body {
 }
 
 html {
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 
@@ -213,6 +213,7 @@ p.center.align{
     border: 1px solid #ffa083;
 }
 
-/*div.col.s12.m7.recipe-card{
-    width: 300px;
-}*/
+.card .card-content .card-title{
+    font-family: "Varela Round", sans-serif;
+    color: black;
+}
