@@ -107,10 +107,11 @@ def profile(username):
     # this will grab the session's user username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
 
     # making sure that a user can't force into other users profile
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 

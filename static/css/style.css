@@ -158,7 +158,7 @@ hr {
 }
 
 
-/* ----------------------------------------------- LOGIN --- */
+/* ----------------------------------------------- LOGIN/REGISTER--- */
 
 h3 {
   font-size: 30px;
@@ -206,3 +206,13 @@ div.input-field.col.s12 #password{
 p.center.align{
     margin-top: 0px;
 }
+
+/* ----------------------------------------------- PROFILE --- */
+
+.underline{
+    border: 1px solid #ffa083;
+}
+
+/*div.col.s12.m7.recipe-card{
+    width: 300px;
+}*/

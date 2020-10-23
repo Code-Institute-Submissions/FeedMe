@@ -1,14 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- User Profile Name -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
-                <h3 class="center-align light-green-text text-darken-4">
-                    {{ username }}'s Profile
-                </h3>
+            <h3 class="center-align black-text">
+                {{ username }}'s Profile
+            </h3>
             </div>
         </div>
+    </div>
+    <!----------------------------------->
+
+    <!-- My Recipes Title -->
+    <h3 class="black-text center-align">
+        My Recipes
+        
+    </h3>
+    <hr class="underline">
+    <!----------------------------------->
+
+    <!-- User Recipes -->
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col s12 m3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="static/images/soups.jpg">
+                </div>
+                <div class="card-content">
+                    <a href=""><span class="card-title">{{ recipe.recipe_name }}</span></a>
+                </div>
+                <div class="card-action">
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn orange lighten-4">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn">Delete</a>
+                </div>   
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
