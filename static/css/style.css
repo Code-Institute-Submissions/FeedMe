@@ -215,6 +215,7 @@ p.center.align{
 
 .underline{
     border: 1px solid #ffa083;
+    max-width: 70%;
 }
 
 .card .card-content .card-title{
@@ -228,6 +229,16 @@ p.center.align{
     margin-top: 50px;
     font-family: "Varela Round", sans-serif;
     font-size: initial;
+}
+
+.recipe img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+
+.image-shadow{
+    box-shadow: 8px 9px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-recipe{

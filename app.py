@@ -46,6 +46,18 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
+# Search for the user's Recipes in User Profile
+@app.route("/search_my_recipe", methods=["GET", "POST"])
+def search_my_recipe():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    my_recipe = list(mongo.db.recipes.find({"created_by": username.lower()}))
+
+    return render_template("profile.html", username=username, recipes=recipes, my_recipe=my_recipe)
+
+
 # Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
