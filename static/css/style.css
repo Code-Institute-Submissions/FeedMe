@@ -31,7 +31,6 @@ html {
     line-height: 42px;
 }
 
-
 /* ----------------------------------------------- Navigation bar --- */
 
 nav .brand-logo{
@@ -100,6 +99,7 @@ hr {
   color: white;
   background-color: #ffa083;
   border-color: #ffa083;
+  font-family: "Varela Round", sans-serif;
 
   transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
@@ -158,7 +158,7 @@ hr {
 }
 
 
-/* ----------------------------------------------- Login Form --- */
+/* ----------------------------------------------- LOGIN --- */
 
 h3 {
   font-size: 30px;
@@ -179,5 +179,21 @@ p .center .align .no-account{
 }
 
 .input-field #username{
-    color: #ffa083;
+    font-family: 'Varela Round';
+}
+
+.flashes h4{
+    background-color: white;
+    color: crimson;
+    font-family: "Varela Round", sans-serif;
+    margin-bottom: 0px;
+}
+
+.input-field.col .prefix ~ label{
+    color: black;
+    font-family: "Varela Round", sans-serif;
+}
+
+.btn-large{
+    font-family: "Varela Round", sans-serif;
 }
