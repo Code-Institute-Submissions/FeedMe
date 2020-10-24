@@ -4,11 +4,7 @@
     <!-- User Profile Name -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-            <h3 class="center-align black-text">
-                {{ username }}'s Profile
-            </h3>
-            </div>
+            <h3 class="center-align black-text">Hello <b class="deep-orange-text text-lighten-3">{{ username }}</b> !</h3>
         </div>
     </div>
     <!----------------------------------->
@@ -16,34 +12,31 @@
     <!-- My Recipes Title -->
     <h3 class="black-text center-align">
         My Recipes
-        
     </h3>
     <hr class="underline s8 m8 l8">
     <!----------------------------------->
 
-    <!-- Search Bar -->
+    <!-- Search Bar ------------------->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <form action="{{ url_for('search_my_recipe') }}" method="post" class="col s12">
                 <div class="row valign-wrapper center-align" >
                     <div class="input-field col s12 m8" >
-                        <i class="fas fa-search prefix light-green-text text-darken-4"></i>
+                        <i class="fas fa-book-open prefix deep-orange-text text-lighten-3"></i>
                         <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                        <label for="query">Search Recipes</label>
+                        <label for="query"> Search Recipes </label>
                     </div>
-                    <div class="col s12 m4" >
-                        <a  href="{{ url_for('get_recipes') }}" class="red btn text-shadow">Reset</a>
-                        <button type="submit" class="light-green darken-1 btn text-shadow">
-                            <i class="fas fa-search left"></i> Search
-                        </button>
+                    <div class="col s12 m6 l6" >
+                        <a  href="{{ url_for('get_recipes') }}" id="reset" class="btn btn-recipe">Reset</a>
+                        <button type="submit" id="search" class="btn btn-recipe">Search</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- End Search Bar -->
+    <!-- End Search Bar ------------------------->
 
-    <!-- User Recipes -->
+    <!-- User Recipes --------------------->
     <div class="row center-align">
         {% for recipe in recipes %}
         <div class="col s12 m3">
