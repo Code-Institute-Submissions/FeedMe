@@ -27,8 +27,8 @@
                         <label for="query"> Search Recipes </label>
                     </div>
                     <div class="col s8 m6 l6" >
-                        <button type="submit" id="search" class="btn btn-recipe">Search</button>
-                        <a  href="{{ url_for('get_recipes') }}" id="reset" class="btn btn-recipe">Reset</a>
+                        <button type="submit" class="btn btn-recipe search">Search</button>
+                        <a  href="{{ url_for('get_recipes') }}" class="btn btn-recipe reset">Reset</a>
                     </div>
                 </div>
             </form>
@@ -55,10 +55,31 @@
                     <h5>{{ recipe.recipe_description }}</h5>
                 </div>
                 </div>
+                <!-- Buttons -->
                 <div class="card-action">
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-light">Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-light">Delete</a>
-                </div>   
+                        <!-- Edit Button -->
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-recipe edit">Edit</a>
+                        <!-- Delete Button -->
+                        <a href="#delete-recipe"
+                            class="btn modal-trigger btn-recipe delete">Delete</a>
+                </div>
+
+                <!-- Modal Action -->
+                <div id="delete-recipe" class="modal">
+                    <div>
+                        <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                            <p>
+                                Are you sure you want to delete this recipe?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+                                class="btn-recipe btn-small neutral modal-close del">Delete</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">Cancel</a>
+                        </div>
+                    </div>
+                </div>  
             </div>
         </div>
         {% endfor %}

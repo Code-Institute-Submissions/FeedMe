@@ -47,11 +47,13 @@
                 class="btn btn-light btn-recipe">Recipes</a></div>
             {% if session.user|lower == recipe.created_by|lower %}
                 <!-- Edit Button -->
-                <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit"
-                    class="btn btn-recipe">Edit</a></div>
+                <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+                    class="btn btn-recipe edit">Edit</a></div>
                 <!-- Delete Button -->
-                <div class="col s4"><a href="#delete-recipe" id="delete" class="btn btn-recipe modal-trigger">Delete</a></div>
+                <div class="col s4"><a href="#delete-recipe"
+                    class="btn btn-recipe modal-trigger delete">Delete</a></div>
 
+                <!-- Modal Action -->
                 <div id="delete-recipe" class="modal">
                     <div>
                         <div>

@@ -228,25 +228,29 @@ p.center.align{
     color: black;
 }
 
-#reset{
+a.btn.btn-recipe.reset,
+a.btn.modal-trigger.btn-recipe.delete{
     color: white;
     background-color: #c62828;
     font-family: "Varela Round", sans-serif;
 }
 
-#reset:hover {
+a.btn.btn-recipe.reset:hover,
+a.btn.modal-trigger.btn-recipe.delete:hover{
   background-color:white;
   color: #c62828;
   border: 1px solid white;
 }
 
-#search{
+button.btn.btn-recipe.search,
+a.btn.btn-recipe.edit{
     background-color: #4db6ac;
     color: white;
     font-family: "Varela Round", sans-serif;
 }
 
-#search:hover {
+button.btn.btn-recipe.search:hover,
+a.btn.btn-recipe.edit:hover{
   background-color:white;
   color: #4db6ac;
   border: 1px solid white;
@@ -280,19 +284,19 @@ div.row.form-search{
     width: 100px;
 }
 
-a#edit.btn.btn-recipe,
+a.btn.btn-recipe.edit,
 a.btn-recipe.btn-small.neutral.modal-close.ed{
     background-color: #4db6ac;
     color: white;
 }
 
-a#delete.btn.btn-recipe,
+a.btn.btn-recipe.delete,
 a.btn-recipe.btn-small.neutral.modal-close.del{
     color: white;
     background-color: #c62828;
 }
 
-a#edit.btn:hover,
+a.btn.btn-recipe.edit:hover,
 a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
   background-color:white;
   color: #4db6ac;
