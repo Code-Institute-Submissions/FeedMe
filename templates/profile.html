@@ -39,7 +39,7 @@
     <!-- User Recipes --------------------->
     <div class="row center-align">
         {% for recipe in recipes %}
-        <div class="col s12 m3">
+        <div class="col s12 m3 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{url_for('static', filename='images/soups.jpg')}}" alt="{{ recipe.recipe_name }}">
@@ -47,12 +47,12 @@
                 <div class="card-content">
                     <a href="{{url_for('recipe', recipe_id=recipe._id)}}">
                         <span class="card-title">{{ recipe.recipe_name }}</span></a>
-                    {% if recipe.favorite == "on" %}
+                        {% if recipe.favorite == "on" %}
                         <i class="fas fa-heart light-green-text text-lighten-2 tooltipped"
                             data-position="right" data-tooltip="I love it!"></i>
-                    {% endif %}
+                        {% endif %}
                 <div>
-                    <h5>{{ recipe.recipe_description }}</h5>
+                    <h5 class="recipe-description">{{ recipe.recipe_description }}</h5>
                 </div>
                 </div>
                 <!-- Buttons -->
