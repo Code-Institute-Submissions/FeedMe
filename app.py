@@ -123,7 +123,8 @@ def profile(username):
 
     # making sure that a user can't force into other users profile
     if session["user"]:
-        return render_template("profile.html", username=username, recipes=recipes)
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 

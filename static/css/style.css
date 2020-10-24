@@ -213,10 +213,10 @@ p.center.align{
 
 /* ----------------------------------------------- PROFILE --- */
 
-.card-panel{
+/*.card-panel{
     height: 10px;
     margin-top: 30px;
-}
+}*/
 
 .underline{
     border: 1px solid #ffa083;
@@ -252,6 +252,10 @@ p.center.align{
   border: 1px solid white;
 }
 
+div.row.form-search{
+    margin-top: 30px;
+}
+
 /* ----------------------------------------------- RECIPE --- */
 
 .recipe{
@@ -276,24 +280,39 @@ p.center.align{
     width: 100px;
 }
 
-a#edit.btn.btn-recipe{
+a#edit.btn.btn-recipe,
+a.btn-recipe.btn-small.neutral.modal-close.ed{
     background-color: #4db6ac;
     color: white;
 }
 
-a#delete.btn.btn-recipe{
+a#delete.btn.btn-recipe,
+a.btn-recipe.btn-small.neutral.modal-close.del{
     color: white;
     background-color: #c62828;
 }
 
-a#edit.btn:hover {
+a#edit.btn:hover,
+a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
   background-color:white;
   color: #4db6ac;
   border: 1px solid white;
 }
 
-a#delete.btn:hover {
+a#delete.btn:hover,
+a.btn-recipe.btn-small.neutral.modal-close:hover{
   background-color:white;
   color: #c62828;
   border: 1px solid white;
+}
+
+div#delete-recipe.modal.open{
+    font-family: "Varela Round", sans-serif;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+i.fas.fa-exclamation-circle{
+    font-size: 50px;
+    margin-top: 15px;
 }

@@ -50,19 +50,20 @@
                 <div class="col s4"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" id="edit"
                     class="btn btn-recipe">Edit</a></div>
                 <!-- Delete Button -->
-                <div class="col s4"><a href="#delete-this" id="delete" class="btn btn-recipe">Delete</a></div>
+                <div class="col s4"><a href="#delete-recipe" id="delete" class="btn btn-recipe modal-trigger">Delete</a></div>
 
-                <div id="delete-this" class="modal">
+                <div id="delete-recipe" class="modal">
                     <div>
                         <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
                             <p>
                                 Are you sure you want to delete this recipe?
                             </p>
                         </div>
                         <div>
                             <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-                                class="btn-small neutral red modal-close">Delete</a>
-                            <a class="btn-small neutral blue modal-close">Cancel</a>
+                                class="btn-recipe btn-small neutral modal-close del">Delete</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">Cancel</a>
                         </div>
                     </div>
                 </div>
