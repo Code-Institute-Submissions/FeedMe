@@ -55,7 +55,9 @@ def search_my_recipe():
         {"username": session["user"]})["username"]
     my_recipe = list(mongo.db.recipes.find({"created_by": username.lower()}))
 
-    return render_template("profile.html", username=username, recipes=recipes, my_recipe=my_recipe)
+    return render_template(
+        "profile.html", username=username,
+            recipes=recipes, my_recipe=my_recipe)
 
 
 # Register
@@ -73,7 +75,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower()
+            "email": request.form.get("email").lower(),
+            "image": request.form.get("image")
         }
         mongo.db.users.insert_one(register)
 
@@ -119,12 +122,14 @@ def profile(username):
     # this will grab the session's user username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    image = mongo.db.users.find_one(
+        {"username": session["user"]})["image"]
     recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
 
     # making sure that a user can't force into other users profile
     if session["user"]:
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=username, image=image, recipes=recipes)
 
     return redirect(url_for("login"))
 
