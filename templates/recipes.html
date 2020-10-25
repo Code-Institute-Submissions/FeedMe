@@ -35,9 +35,11 @@
                 <div class="card-content">
                     <a href="{{url_for('recipe', recipe_id=recipe._id)}}">
                         <span class="card-title">{{ recipe.recipe_name }}</span></a>
-                        {% if recipe.favorite == "on" %}
-                        <i class="fas fa-heart light-green-text text-lighten-2 tooltipped"
-                            data-position="right" data-tooltip="I love it!"></i>
+                        {% if session.user|lower == recipe.created_by|lower %}
+                            {% if recipe.favorite == "on" %}
+                            <i class="fas fa-heart light-green-text text-lighten-2 tooltipped"
+                                data-position="right" data-tooltip="I love it!"></i>
+                            {% endif %}
                         {% endif %}
                 <div>
                     <h5 class="recipe-description">{{ recipe.recipe_description }}</h5>
