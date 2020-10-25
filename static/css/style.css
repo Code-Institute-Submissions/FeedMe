@@ -346,3 +346,9 @@ button.btn-large.add-recipe:hover{
     color: #4db6ac;
     border: 1px solid white;
 }
+
+h4.red-text.text-darken-4.center-align{
+    font-family: "Varela Round", sans-serif;
+    text-transform: uppercase;
+    padding: 20px;
+}

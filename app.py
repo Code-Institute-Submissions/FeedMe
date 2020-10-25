@@ -150,6 +150,7 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
+            "recipe_tools": request.form.get("recipe_tools"),
             "favorite": favorite,
             "date": request.form.get("date"),
             "created_by": session["user"]
