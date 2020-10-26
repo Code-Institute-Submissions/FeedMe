@@ -4,7 +4,7 @@
 
 <div class="row container recipe">
     <div class="col s12 m8 l6">
-        <img src="{{url_for('static', filename='images/parsnip.jpg')}}" alt="{{ recipe.recipe_name }}" class="image-shadow">
+        <img src="#" alt="{{ recipe.recipe_name }}" class="image-shadow">
     </div>
     <div class="row container">
         <div class="col s12 m3 l4">
@@ -13,7 +13,7 @@
             </div>
             <br />
             <div>
-                <b>Tools:</b> {{ recipe.recipe_tools }}
+                <a href="{{ url_for('tools') }}"><b>Tools:</b> {{ recipe.recipe_tools }}</a>
             </div>
             <br />
             <div>

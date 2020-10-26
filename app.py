@@ -75,8 +75,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower(),
-            "image": request.form.get("image")
+            "email": request.form.get("email").lower()
         }
         mongo.db.users.insert_one(register)
 
@@ -122,14 +121,12 @@ def profile(username):
     # this will grab the session's user username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    image = mongo.db.users.find_one(
-        {"username": session["user"]})["image"]
     recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
 
     # making sure that a user can't force into other users profile
     if session["user"]:
         return render_template(
-            "profile.html", username=username, image=image, recipes=recipes)
+            "profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -249,6 +246,29 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("categories"))
+
+
+# Cooking Tools
+@app.route("/tools")
+def tools():
+    # convert the cursor object into a list
+    tools = list(mongo.db.tools.find())
+    return render_template("tools.html", tools=tools)
+
+
+# single tool
+@app.route("/tool/<tool_id>")
+def tool(tool_id):
+    recipe = mongo.db.tools.find_one({"_id": ObjectId(tool_id)})
+    return render_template("tool.html", recipe=recipe)
+
+
+# Search for Tools
+@app.route("/search_tool", methods=["GET", "POST"])
+def search_tool():
+    query = request.form.get("query")
+    tools = list(mongo.db.tools.find({"$text": {"$search": query}}))
+    return render_template("tools.html", tools=tools)
 
 
 # telling the app how and where to run the application
