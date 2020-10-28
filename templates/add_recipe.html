@@ -42,9 +42,11 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3"></i>
-                    <div id="ingredients_list"><input type="text" id="recipe_ingredients" name="recipe_ingredients[]" minlength="5"
-                        class="validate" required></div>
-                    <button id="add_ingredient" name="add_ingredient">+</button>
+                    <div id="ingredients_list"><input type="text" id="recipe_ingredients"
+                        name="recipe_ingredients[]" minlength="5" class="validate" required></div>
+                    <button id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
+                        +
+                    </button>
                     <label for="recipe_ingredients">Ingredients</label>
                 </div>
             </div>
@@ -52,8 +54,11 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mitten prefix deep-orange-text text-lighten-3"></i>
-                    <textarea id="recipe_method" name="recipe_method" minlength="5"
-                        maxlength="2000" class="materialize-textarea validate" required></textarea>
+                    <div id="method_list"><input id="recipe_method" name="recipe_method[]" minlength="5"
+                       class="validate" required></div>
+                    <button id="add_method" name="add_method" class="white deep-orange-text text-lighten-3">
+                        +
+                    </button>
                     <label for="recipe_method">Cooking Method</label>
                 </div>
             </div>
@@ -61,8 +66,11 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-mortar-pestle prefix deep-orange-text text-lighten-3"></i>
-                    <textarea id="recipe_tools" name="recipe_tools" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <div id="tool_list"><input id="recipe_tools" name="recipe_tools[]" minlength="5"
+                        class="validate" required></div>
+                    <button id="add_tool" name="add_tool" class="white deep-orange-text text-lighten-3">
+                        +
+                    </button>
                     <label for="recipe_tools">Tools Needed</label>
                 </div>
             </div>

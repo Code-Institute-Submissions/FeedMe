@@ -350,6 +350,13 @@ div.row.card-panel{
     margin: 0 auto;
 }
 
+button#add_ingredient.white.deep-orange-text.text-lighten-3,
+button#add_method.white.deep-orange-text.text-lighten-3,
+button#add_tool.white.deep-orange-text.text-lighten-3{
+    border: 2px solid #ffccbc;
+    cursor: pointer;
+}
+
 .select-wrapper input.select-dropdown,
 .dropdown-content li{
     font-family: "Varela Round", sans-serif;

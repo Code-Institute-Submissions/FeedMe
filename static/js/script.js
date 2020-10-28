@@ -47,4 +47,22 @@ $(document).ready(function(){
         })
     }
     addNewIngredient();
+
+    const addMethod = () => {
+        let i;
+        $('#add_method').click(()=> {
+            i++;
+            $('#method_list').append('<input id="recipe_method" name="recipe_method[]" minlength="5" class="validate" required>')
+        })
+    }
+    addMethod();
+
+    const addTool = () => {
+        let i;
+        $('#add_method').click(()=> {
+            i++;
+            $('#add_tool').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate" required>')
+        })
+    }
+    addTool();
 });

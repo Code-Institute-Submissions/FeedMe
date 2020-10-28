@@ -30,16 +30,19 @@
     <!-- Recipe Fields -->
     <div class="col s12 m12">
         <br />
+        <span><b>Ingredients:</b></span>
         <ul>
-            <span><b>Ingredients:</b></span>
-                {% for ingredient in recipe.recipe_ingredients  %}
-                    <li>{{ ingredient }}</li>
-                {% endfor %}
+            {% for ingredient in recipe.recipe_ingredients  %}
+                <li>{{ ingredient }}</li>
+            {% endfor %}
         </ul>
         <br />
-        <div>
-           <b>Method:</b> {{ recipe.recipe_method }}
-        </div>
+        <span><b>Method {{ count }} :</b></span>    
+        <ul>
+            {% for method in recipe.recipe_method  %}
+                {{ method }}
+            {% endfor %}
+        </ul>
         <br />
 
         <!-- Buttons -->
