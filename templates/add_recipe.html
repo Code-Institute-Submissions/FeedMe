@@ -42,8 +42,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3"></i>
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5"
-                        maxlength="1000" class="materialize-textarea validate" required></textarea>
+                    <div id="ingredients_list"><input type="text" id="recipe_ingredients" name="recipe_ingredients[]" minlength="5"
+                        class="validate" required></div>
+                    <button id="add_ingredient" name="add_ingredient">+</button>
                     <label for="recipe_ingredients">Ingredients</label>
                 </div>
             </div>

@@ -30,9 +30,12 @@
     <!-- Recipe Fields -->
     <div class="col s12 m12">
         <br />
-        <div>
-            <b>Ingredients:</b> {{ recipe.recipe_ingredients }}
-        </div>
+        <ul>
+            <span><b>Ingredients:</b></span>
+                {% for ingredient in recipe.recipe_ingredients  %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+        </ul>
         <br />
         <div>
            <b>Method:</b> {{ recipe.recipe_method }}

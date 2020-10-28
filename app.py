@@ -150,7 +150,7 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_tools": request.form.get("recipe_tools"),
             "favorite": favorite,
@@ -201,6 +201,7 @@ def delete_recipe(recipe_id):
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    print(recipe)
     return render_template("recipe.html", recipe=recipe)
 
 

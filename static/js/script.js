@@ -39,4 +39,12 @@ $(document).ready(function(){
             }
         });
     }
+    const addNewIngredient = () => {
+        let i;
+        $('#add_ingredient').click(()=> {
+            i++;
+            $('#ingredients_list').append('<input type="text" id="recipe_ingredients" name="recipe_ingredients[]" minlength="5" class="validate" required/>')
+        })
+    }
+    addNewIngredient();
 });
