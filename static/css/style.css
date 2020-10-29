@@ -57,7 +57,7 @@ nav ul a{
 /* ----------------------------------------------- Homepage --- */
 
 .home-img {
-  height: 100vh;
+  height: calc(100vh - 64px);
   background: url(../images/cookbook.jpg) no-repeat bottom right fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -70,6 +70,16 @@ nav ul a{
   position: relative;
 }
 
+.opacity {
+  background: rgba(0,0,0,0.4);
+    width: -webkit-fill-available;
+    height: calc(100vh - 64px);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
 .caption h1 {
     font-size: 50px;
     font-weight: 700;
@@ -80,6 +90,7 @@ nav ul a{
 
 hr {
   border: 1px solid white;
+  max-width: 80%;
 }
 
 .caption h3 {

@@ -174,7 +174,7 @@ def edit_recipe(recipe_id):
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
-            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method"),
             "favorite": favorite,
             "date": request.form.get("date"),

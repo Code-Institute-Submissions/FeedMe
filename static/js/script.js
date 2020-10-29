@@ -39,11 +39,12 @@ $(document).ready(function(){
             }
         });
     }
+    /* Add Ingredient */
     const addNewIngredient = () => {
         let i;
         $('#add_ingredient').click(()=> {
             i++;
-            $('#ingredients_list').append('<input type="text" id="recipe_ingredients" name="recipe_ingredients[]" minlength="5" class="validate" required/>')
+            $('#ingredients_list').append('<input name="ingredients_list" id="ingredients_list" minlength="5"  type="text" value="{{ ingredient }}" class="validate"')
         })
     }
     addNewIngredient();
@@ -59,10 +60,11 @@ $(document).ready(function(){
 
     const addTool = () => {
         let i;
-        $('#add_method').click(()=> {
+        $('#add_tool').click(()=> {
             i++;
-            $('#add_tool').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate" required>')
+            $('#tool_list').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate">')
         })
     }
     addTool();
+    
 });
