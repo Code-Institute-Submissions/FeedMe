@@ -372,9 +372,13 @@ i.fas.fa-mortar-pestle.prefix.deep-orange-text.text-lighten-3{
 
 button#add_ingredient.white.deep-orange-text.text-lighten-3,
 button#add_method.white.deep-orange-text.text-lighten-3,
-button#add_tool.white.deep-orange-text.text-lighten-3{
+button#add_tool.white.deep-orange-text.text-lighten-3,
+button#del_ingredient.white.deep-orange-text.text-lighten-3,
+button#del_method.white.deep-orange-text.text-lighten-3,
+button#del_tool.white.deep-orange-text.text-lighten-3{
     border: 2px solid #ffccbc;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .select-wrapper input.select-dropdown,
