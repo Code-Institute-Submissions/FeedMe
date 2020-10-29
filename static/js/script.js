@@ -58,22 +58,45 @@ $(document).ready(function(){
     }
     delIngredient();
 
+    
+    /* Add Method */
     const addMethod = () => {
-        let i;
         $('#add_method').click(()=> {
             i++;
-            $('#method_list').append('<input id="recipe_method" name="recipe_method[]" minlength="5" class="validate" placeholder="cooking method" required>')
+            $('#method_list').append(`<input id="recipe_method_${i}" name="recipe_method[${i}]" minlength="5" class="validate" placeholder="cooking method" required>`)
         })
     }
     addMethod();
 
+    /* Delete Method */
+    const delMethod = () => {
+        $('#del_method').click(()=> {
+            $(`#recipe_method_${i}`).remove()
+            i--;
+        })
+        console.log(i)
+    }
+    delMethod();
+
+
+    /* Add Tool */
     const addTool = () => {
-        let i;
         $('#add_tool').click(()=> {
             i++;
-            $('#tool_list').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate" placeholder="cooking tools">')
+            $('#tool_list').append(`<input id="recipe_tools_${i}" name="recipe_tools[${i}]" minlength="5" class="validate" placeholder="cooking tools">`)
         })
     }
     addTool();
+
+
+    /* Delete Tool */
+    const delTool = () => {
+        $('#del_tool').click(()=> {
+            $(`#recipe_tools_${i}`).remove()
+            i--;
+        })
+        console.log(i)
+    }
+    delTool();
     
 });
