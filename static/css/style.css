@@ -6,8 +6,6 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -360,8 +358,16 @@ i.fas.fa-exclamation-circle{
 /* ----------------------------------------------- ADD RECIPE --- */
 
 div.row.card-panel{
-    width: 90%;
+    max-width: 80%;
     margin: 0 auto;
+    font-family: "Varela Round", sans-serif;
+}
+
+i.fas.fa-shopping-basket.prefix.deep-orange-text.text-lighten-3,
+i.fas.fa-mitten.prefix.deep-orange-text.text-lighten-3,
+i.fas.fa-mortar-pestle.prefix.deep-orange-text.text-lighten-3{
+    font-size: 2rem;
+    margin-bottom: -10px;
 }
 
 button#add_ingredient.white.deep-orange-text.text-lighten-3,

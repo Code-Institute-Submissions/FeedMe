@@ -169,7 +169,6 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        favorite = "on" if request.form.get("favorite") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -188,7 +187,8 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     difficulties = mongo.db.difficulty.find()
     return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories. difficulties=difficulties)
+        "edit_recipe.html", recipe=recipe, categories=categories,
+            difficulties=difficulties)
 
 
 # Delete a Recipe
