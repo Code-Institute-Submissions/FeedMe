@@ -33,21 +33,36 @@ $(document).ready(function(){
             }
         });
     }
+
+    // I is declared outside the add function
+    let i=0
+
     /* Add Ingredient */
     const addNewIngredient = () => {
-        let i;
+        // let i;
         $('#add_ingredient').click(()=> {
             i++;
-            $('#ingredients_list').append('<input name="ingredients_list" id="ingredients_list" minlength="5"  type="text" value="{{ ingredient }}" class="validate"')
+            // Use backticks so that you can insert i inside
+            $('#ingredients_list').append(`<input type="text" id="recipe_ingredients_${i}" name="recipe_ingredients[${i}]" minlength="5" class="validate" placeholder="ingredients" required>`)
         })
     }
     addNewIngredient();
+
+    /* Delete Ingredient */
+    const delIngredient = () => {
+        $('#del_ingredient').click(()=> {
+            $(`#recipe_ingredients_${i}`).remove()
+            i--;
+        })
+        console.log(i)
+    }
+    delIngredient();
 
     const addMethod = () => {
         let i;
         $('#add_method').click(()=> {
             i++;
-            $('#method_list').append('<input id="recipe_method" name="recipe_method[]" minlength="5" class="validate" required>')
+            $('#method_list').append('<input id="recipe_method" name="recipe_method[]" minlength="5" class="validate" placeholder="cooking method" required>')
         })
     }
     addMethod();
@@ -56,7 +71,7 @@ $(document).ready(function(){
         let i;
         $('#add_tool').click(()=> {
             i++;
-            $('#tool_list').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate">')
+            $('#tool_list').append('<input id="recipe_tools" name="recipe_tools[]" minlength="5" class="validate" placeholder="cooking tools">')
         })
     }
     addTool();
