@@ -80,7 +80,7 @@ def register():
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
-        flash("You have been successfully registrated!")
+        flash("You have been successfully registered!")
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
@@ -145,7 +145,6 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        favorite = "on" if request.form.get("favorite") else "off"
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -153,8 +152,8 @@ def add_recipe():
             "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method[]"),
             "recipe_tools": request.form.get("recipe_tools[]"),
-            "favorite": favorite,
-            "date": request.form.get("date"),
+            "time": request.form.get("time"),
+            "difficulty": request.form.get("difficulty"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -162,7 +161,8 @@ def add_recipe():
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", categories=categories)
+    difficulties = mongo.db.difficulty.find()
+    return render_template("add_recipe.html", categories=categories, difficulties=difficulties)
 
 
 # Edit a Recipe
@@ -176,8 +176,9 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method"),
-            "favorite": favorite,
-            "date": request.form.get("date"),
+            "recipe_tools": request.form.get("recipe_tools[]"),
+            "time": request.form.get("time"),
+            "difficulty": request.form.get("difficulty"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
@@ -185,8 +186,9 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
+    difficulties = mongo.db.difficulty.find()
     return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories)
+        "edit_recipe.html", recipe=recipe, categories=categories. difficulties=difficulties)
 
 
 # Delete a Recipe

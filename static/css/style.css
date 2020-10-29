@@ -6,9 +6,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-html {
-    overflow-y: auto;
-}
+
 
 * {
   box-sizing: border-box;
@@ -210,7 +208,7 @@ div.input-field.col.s12 #password{
     font-family: "Varela Round", sans-serif;
 }
 
-.btn-large{
+.btn-small{
     font-family: "Varela Round", sans-serif;
 }
 
@@ -220,6 +218,11 @@ div.input-field.col.s12 #password{
 
 p.center.align{
     margin-top: 0px;
+}
+
+button.btn-small.deep-orange.accent-1.text-shadow{
+    margin: 0 auto;
+    display: flex;
 }
 
 /* ----------------------------------------------- PROFILE --- */
