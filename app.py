@@ -1,7 +1,4 @@
 import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -10,7 +7,6 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
 
 # instance of Flask
 app = Flask(__name__)
@@ -177,7 +173,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
-            "recipe_method": request.form.get("recipe_method"),
+            "recipe_method": request.form.get("recipe_method[]"),
             "recipe_tools": request.form.get("recipe_tools[]"),
             "time": request.form.get("time"),
             "difficulty": request.form.get("difficulty"),

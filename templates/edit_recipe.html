@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% load cloudinary %}
 {% block content %}
 
-    <h3 class="light-green-text text-darken-4 center-align">Edit Recipe</h3>
+    <h3 class="light-green-text text-darken-4 center-align">Edit Recipe
+        <hr class="underline s8 m8 l8">
+    </h3>
 
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
             <!-- Recipe Category Selection -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="far fa-folder-open prefix light-green-text text-darken-4"></i>
+                    <i class="far fa-folder-open prefix deep-orange-text text-lighten-3"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose a Category</option>
                         {% for category in categories %}
@@ -26,7 +27,7 @@
             <!-- Recipe Name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                    <i class="fas fa-pencil-alt prefix deep-orange-text text-lighten-3"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
@@ -35,7 +36,7 @@
             <!-- Recipe Description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
+                    <i class="fas fa-align-left prefix deep-orange-text text-lighten-3"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required>
                         {{- recipe.recipe_description -}}
@@ -45,51 +46,71 @@
             </div>
             <!-- Recipe Ingredients -->
             <div class="row">
+                <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
-                    <input name="ingredients_list" id="ingredients_list" minlength="5"  type="text"
-                        value="{{ recipe.recipe_ingredients }}" class="validate" required />
+                    <div id="ingredients_list"><input name="recipe_ingredients" id="recipe_ingredients" minlength="5"
+                        type="text" value="{{ recipe.recipe_ingredients[] }}" class="validate" placeholder="ingredients" required /></div>
                     <button id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
                         +
                     </button>
-                    <label for="recipe_ingredients">Recipe Ingredients</label>
+                    <button id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
+                        -
+                    </button>
+                    <label for="recipe_ingredients"></label>
                 </div>
             </div>
             <!-- Recipe Method -->
             <div class="row">
+                <i class="fas fa-mitten prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-green-text text-darken-4"></i>
-                    <textarea id="recipe_method" name="recipe_method" minlength="5"
-                        maxlength="2000" class="materialize-textarea validate" required>
-                        {{- recipe.recipe_method -}}
-                    </textarea>
-                    <label for="recipe_method">Recipe Method</label>
+                    <div id="method_list"><input id="recipe_method" name="recipe_method[]" minlength="5"
+                       type="text" value="{{ recipe.recipe_method[] }}" class="validate" placeholder="cooking method" required></div>
+                    <button id="add_method" name="add_method" class="white deep-orange-text text-lighten-3">
+                        +
+                    </button>
+                    <button id="del_method" name="del_method" class="white deep-orange-text text-lighten-3">
+                        -
+                    </button>
+                    <label for="recipe_method"></label>
                 </div>
             </div>
-            <!-- Date that Recipe was inserted -->
+            <!-- Recipe Tools -->
             <div class="row">
+                <i class="fas fa-mortar-pestle prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
-                    <input id="date" name="date" type="text"
-                        value="{{ recipe.date }}" class="datepicker validate" required>
-                    <label for="date">Date</label>
+                    <div id="tool_list"><input id="recipe_tools" name="recipe_tools[]" minlength="5"
+                        type="text" value="{{ recipe.recipe_tools[] }}" class="validate" placeholder="cooking tools" ></div>
+                    <button id="add_tool" name="add_tool" class="white deep-orange-text text-lighten-3">
+                        +
+                    </button>
+                    <button id="del_tool" name="del_tool" class="white deep-orange-text text-lighten-3">
+                        -
+                    </button>
+                    <label for="recipe_tools"></label>
                 </div>
             </div>
-            <!-- Favorite Recipe Toggle -->
+            <!-- Preparation Time -->
             <div class="row">
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <i class="far fa-heart prefix light-green-text text-darken-4"></i>
-                        <label for="favorite">
-                            {% if recipe.favorite == "on" %}
-                                <input type="checkbox" id="favorite" name="favorite" checked>
+                <div class="input-field col s6">
+                    <i class="far fa-clock prefix deep-orange-text text-lighten-3"></i>
+                    <input type="time" id="time" name="time" value="{{ recipe.time[] }}"
+                        class="form-control validate" required>
+                    <label for="time">Preparation Time (HH:MM)</label>
+                </div>
+                <!-- Dificulty -->
+                <div class="input-field col s6">
+                    <i class="fas fa-balance-scale-left prefix deep-orange-text text-lighten-3"></i>
+                    <select id="difficulty" name="difficulty" class="validate" required>
+                        <option value="" disabled selected>Dificulty</option>
+                        {% for difficulty in difficulties %}
+                            {% if difficulty.level == recipe.level %}
+                                <option value="{{ difficulty.level }}" selected>{{ difficulty.level }}</option>
                             {% else %}
-                                <input type="checkbox" id="favorite" name="favorite">
+                                <option value="{{ difficulty.level }}">{{ difficulty.level }}</option>
                             {% endif %}
-                            <span class="lever"></span>
-                            <i class="fas fa-heart prefix light-green-text text-darken-4"></i>
-                        </label>
-                    </div>
+                        {% endfor %}
+                    </select>
+                    <label for="difficulty"></label>
                 </div>
             </div>
             <!-- Submit Recipe Button -->

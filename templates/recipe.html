@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load cloudinary %}
 {% block content %}
 
 <h3 class="center-align">{{ recipe.recipe_name }}</h3>
@@ -41,9 +40,9 @@
         <br />
         <span><b>Method {{ count }} :</b></span>    
         <ol>
-            {% for method in recipe.recipe_method  %}
-                {{ method }}
-            {% endfor %}
+            <!--{% for method in recipe.recipe_method %}-->
+                {{ recipe.recipe_method }}
+            <!--{% endfor %}-->
         </ol>
         <br />
 
