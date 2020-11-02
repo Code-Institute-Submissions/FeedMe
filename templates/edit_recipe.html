@@ -38,7 +38,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix deep-orange-text text-lighten-3"></i>
                     <textarea id="recipe_description" name="recipe_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
+                        maxlength="35" class="materialize-textarea validate" required>
                         {{- recipe.recipe_description -}}
                     </textarea>
                     <label for="recipe_description">Recipe Description</label>
@@ -143,8 +143,8 @@
                         </div>
                         <div>
                             <a href="{{ url_for('profile', username=session['user']) }}"
-                                class="btn-recipe btn-small neutral modal-close del">Cancel</a>
-                            <a class="btn-recipe btn-small neutral modal-close ed">Edit</a>
+                                class="btn-recipe btn-small neutral modal-close del">Yes</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">No</a>
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-
-
 /* ------------------------------------------------- */
 
 .text-shadow{
@@ -225,25 +223,18 @@ button.btn-small.deep-orange.accent-1.text-shadow{
 
 /* ----------------------------------------------- PROFILE --- */
 
+hr.underline{
+    border: 1px solid #ffa083;
+    max-width: 80%;
+}
+
 label.center-align{
     cursor: pointer;
 }
 
-img#output.center-align{
-    max-width: 100%;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.underline{
-    border: 1px solid #ffa083;
-    max-width: 70%;
-}
-
 .card .card-content .card-title{
     font-family: "Varela Round", sans-serif;
-    color: black;
+    color: #ffa083;
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -253,18 +244,18 @@ h5.recipe-description{
     font-size: 15px;
 }
 
-a.btn.btn-recipe.reset,
-a.btn.modal-trigger.btn-recipe.delete{
-    color: white;
+button.btn.btn-recipe.search,
+a.btn.btn-recipe.reset{
     background-color: #c62828;
+    color: white;
     font-family: "Varela Round", sans-serif;
 }
 
-a.btn.btn-recipe.reset:hover,
-a.btn.modal-trigger.btn-recipe.delete:hover{
-  background-color:white;
-  color: #c62828;
-  border: 1px solid white;
+button.btn.btn-recipe.search,
+a.btn.btn-recipe.reset:hover{
+    background-color: white;
+    color: #c62828;
+    font-family: "Varela Round", sans-serif;
 }
 
 button.btn.btn-recipe.search,
@@ -324,7 +315,7 @@ a.btn-recipe.btn-small.neutral.modal-close.ed{
     color: white;
 }
 
-a.btn.btn-recipe.delete,
+a.btn.btn-recipe.modal-trigger.delete,
 a.btn-recipe.btn-small.neutral.modal-close.del{
     color: white;
     background-color: #c62828;
@@ -337,7 +328,7 @@ a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
   border: 1px solid white;
 }
 
-a#delete.btn:hover,
+a.btn.btn-recipe.modal-trigger.delete:hover,
 a.btn-recipe.btn-small.neutral.modal-close:hover{
   background-color:white;
   color: #c62828;
