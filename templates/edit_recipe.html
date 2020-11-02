@@ -122,15 +122,32 @@
             <div class="row">
                 <div class="col s12 center-align">
                 <!-- Cancel Submit Button -->
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
+                    <a href="#delete-recipe" class="btn modal-trigger btn-cancel-recipe">
+                        Cancel <i class="fas fa-times"></i>
                     </a>
-                    <button type="submit" class="btn btn-light btn-recipe">
-                        Edit Recipe <i class="fas fa-edit right"></i>
+                    <button type="submit" class="btn btn-edit-recipe">
+                        Done <i class="fas fa-check"></i>
                     </button>
                 </div>
             </div>
         </form>
+
+        <!-- Modal Action -->
+                <div id="delete-recipe" class="center-align modal">
+                    <div>
+                        <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                            <p>
+                                Are you sure you want to cancel?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('profile', username=session['user']) }}"
+                                class="btn-recipe btn-small neutral modal-close del">Cancel</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">Edit</a>
+                        </div>
+                    </div>
+                </div>
     </div>
 
 {% endblock %}

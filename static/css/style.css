@@ -403,3 +403,34 @@ h4.red-text.text-darken-4.center-align{
     text-transform: uppercase;
     padding: 20px;
 }
+
+
+/* ----------------------------------------------- EDIT RECIPE --- */
+
+a.btn.modal-trigger.btn-cancel-recipe{
+    color: white;
+    background-color: #c62828;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    border-radius: 23px;
+}
+
+a.btn.modal-trigger.btn-cancel-recipe:hover{
+  background-color:white;
+  color: #c62828;
+  border: 1px solid white;
+}
+
+button.btn.btn-edit-recipe{
+    color: white;
+    background-color: #4db6ac;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    border-radius: 23px;
+}
+
+button.btn.btn-edit-recipe:hover{
+    background-color:white;
+    color: #4db6ac;
+    border: 1px solid white;
+}
