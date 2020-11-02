@@ -174,7 +174,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method[]"),
-            "recipe_tools": request.form.get("recipe_tools[]"),
+            "recipe_tools": request.form.get("recipe_tools"),
             "time": request.form.get("time"),
             "difficulty": request.form.get("difficulty"),
             "created_by": session["user"]

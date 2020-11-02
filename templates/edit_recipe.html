@@ -48,14 +48,19 @@
             <div class="row">
                 <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <div id="ingredients_list"><input name="recipe_ingredients" id="recipe_ingredients" minlength="5"
-                        type="text" value="{{ recipe.recipe_ingredients[] }}" class="validate" placeholder="ingredients" required /></div>
-                    <button id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
-                        +
-                    </button>
-                    <button id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
-                        -
-                    </button>
+                        <div id="ingredients_list">
+                            {% for ingredient in recipe.recipe_ingredients %}
+                                <input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5"
+                                    type="text" value="{{ ingredient }}" class="validate"
+                                        placeholder="ingredients" required />
+                            {% endfor %}
+                                <button id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
+                                    +
+                                </button>
+                                <button id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
+                                    -
+                                </button>
+                        </div>
                     <label for="recipe_ingredients"></label>
                 </div>
             </div>
@@ -64,7 +69,7 @@
                 <i class="fas fa-mitten prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
                     <div id="method_list"><input id="recipe_method" name="recipe_method[]" minlength="5"
-                       type="text" value="{{ recipe.recipe_method[] }}" class="validate" placeholder="cooking method" required></div>
+                       type="text" value="{{ recipe.recipe_method[] }}" class="validate" placeholder="cooking method"></div>
                     <button id="add_method" name="add_method" class="white deep-orange-text text-lighten-3">
                         +
                     </button>
@@ -78,8 +83,8 @@
             <div class="row">
                 <i class="fas fa-mortar-pestle prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <div id="tool_list"><input id="recipe_tools" name="recipe_tools[]" minlength="5"
-                        type="text" value="{{ recipe.recipe_tools[] }}" class="validate" placeholder="cooking tools" ></div>
+                    <div id="tool_list"><input id="recipe_tools" name="recipe_tools" minlength="5"
+                        type="text" value="{{ recipe.recipe_tools }}" class="validate" placeholder="cooking tools" ></div>
                     <button id="add_tool" name="add_tool" class="white deep-orange-text text-lighten-3">
                         +
                     </button>
@@ -93,14 +98,14 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="far fa-clock prefix deep-orange-text text-lighten-3"></i>
-                    <input type="time" id="time" name="time" value="{{ recipe.time[] }}"
+                    <input type="time" id="time" name="time" value="{{ recipe.time }}"
                         class="form-control validate" required>
                     <label for="time">Preparation Time (HH:MM)</label>
                 </div>
                 <!-- Dificulty -->
                 <div class="input-field col s6">
                     <i class="fas fa-balance-scale-left prefix deep-orange-text text-lighten-3"></i>
-                    <select id="difficulty" name="difficulty" class="validate" required>
+                    <select id="difficulty" name="difficulty" class="validate">
                         <option value="" disabled selected>Dificulty</option>
                         {% for difficulty in difficulties %}
                             {% if difficulty.level == recipe.level %}
@@ -120,7 +125,7 @@
                     <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red text-shadow">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
-                    <button type="submit" class="btn-large light-green darken-1 text-shadow">
+                    <button type="submit" class="btn btn-light btn-recipe">
                         Edit Recipe <i class="fas fa-edit right"></i>
                     </button>
                 </div>
