@@ -273,6 +273,24 @@ def search_tool():
     return render_template("tools.html", tools=tools)
 
 
+# Add Tool
+@app.route("/add_tool", methods=["GET", "POST"])
+def add_tool():
+    if request.method == "POST":
+        tool = {
+            "tool_name": request.form.get("tool_name"),
+            "tool_description": request.form.get("tool_description"),
+            "tool_details": request.form.get("tool_details"),
+            "tool_image": request.form.get("tool_image")
+        }
+        mongo.db.tools.insert_one(tool)
+        flash("You're tool was successfully added")
+        return redirect(url_for("tools"))
+
+    name = mongo.db.tools.find().sort("tool_name", 1)
+    return render_template("add_tool.html", name=name)
+
+
 # telling the app how and where to run the application
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

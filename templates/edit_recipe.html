@@ -54,15 +54,15 @@
                                     <input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5"
                                         type="text" value="{{ ingredient }}" class="validate"
                                             placeholder="ingredients" required />
+                                <button type="button" id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
+                                    +
+                                </button>
+                                <button type="button" id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
+                                    -
+                                </button>
                                 {% endfor %}
                             </div>
                         </div>
-                        <button id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
-                            +
-                        </button>
-                        <button id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
-                            -
-                        </button>
                     <label for="recipe_ingredients"></label>
                 </div>
             </div>

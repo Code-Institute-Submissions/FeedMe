@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="black-text center-align">Add Tools
+        <hr class="underline s8 m8 l8">
+    </h3>
+
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('add_tool') }}">
+            
+            <!-- Tool Name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix deep-orange-text text-lighten-3"></i>
+                    <input id="tool_name" name="tool_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="tool_name">Tool Name</label>
+                </div>
+            </div>
+
+            <!-- Tool Description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix deep-orange-text text-lighten-3"></i>
+                    <textarea id="tool_description" name="tool_description" minlength="5"
+                        maxlength="35" class="materialize-textarea validate" required></textarea>
+                    <label for="tool_description">Description</label>
+                </div>
+            </div>
+
+            <!-- Tool Details -->
+            <div class="row">
+                <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3 input-field col s12"></i>
+                <div class="input-field col s12">
+                    <div id="details"><input type="text" id="tool_details"
+                        name="tool_details" minlength="5" class="validate" placeholder="tool details" required></div>
+                    <label for="tool_details"></label>
+                </div>
+            </div>
+
+            <!-- Tool Image -->
+            <div class="row">
+                <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3 input-field col s12"></i>
+                <div class="input-field col s12">
+                    <textarea id="tool_image" name="tool_image" class="materialize-textarea" minlength="5" maxlength="200" required></textarea>
+                    <label for="tool_image"><i class="far fa-image"></i> Image URL</label>
+                </div>
+            </div>
+
+            <!-- Submit Tool Button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large add-recipe">
+                        Add Tool <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+
+{% endblock %}

@@ -34,11 +34,22 @@ $(document).ready(function(){
         });
     }
 
-        $(this).on("click", "#add_ingredient", function(){
-            var html = '<div id="ingredients"><input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5" type="text" class="validate" placeholder="ingredients"></div>';
-        
+        /*$(this).on("click", "#add_ingredient", function(){
+
+            var html = '<div id="ingredients"><input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5" type="text" class="validate" placeholder="ingredients">';
+                html += '<button type="button" id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3"></div>'
+            
             $(".ingredients").append(html);
-        });
+
+            $(this).on("click", "#del_ingredient", function(){
+            
+                var target = $(this).parent();
+                    target.remove();
+
+            });
+        });*/
+
+        
 
     
 
