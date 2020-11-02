@@ -34,29 +34,13 @@ $(document).ready(function(){
         });
     }
 
-    // I is declared outside the add function
-    let i=0
+        $(this).on("click", "#add_ingredient", function(){
+            var html = '<div id="ingredients"><input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5" type="text" class="validate" placeholder="ingredients"></div>';
+        
+            $(".ingredients").append(html);
+        });
 
-    /* Add Ingredient */
-    const addNewIngredient = () => {
-        // let i;
-        $('#add_ingredient').click(()=> {
-            i++;
-            // Use backticks so that you can insert i inside
-            $('#ingredients_list').append(`<input type="text" id="recipe_ingredients_${i}" name="recipe_ingredients[${i}]" minlength="5" class="validate" placeholder="ingredients" required>`)
-        })
-    }
-    addNewIngredient();
-
-    /* Delete Ingredient */
-    const delIngredient = () => {
-        $('#del_ingredient').click(()=> {
-            $(`#recipe_ingredients_${i}`).remove()
-            i--;
-        })
-        console.log(i)
-    }
-    delIngredient();
+    
 
     
     /* Add Method */
