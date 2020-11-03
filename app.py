@@ -130,6 +130,34 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Edit Profile
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(username):
+    user = mongo.db.users.find_one({"username": username.lower()})
+    if request.method == "POST":
+        submit = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+        }
+        mongo.db.users.update({"username": username.lower()}, submit)
+        flash("Your profile has been updated!")
+
+    if "user" in session:
+        return render_template("edit_profile.html", user=user)
+
+    return redirect(url_for("login"))
+
+
+# Delete Profile
+@app.route("/delete_profile/<username>")
+def delete_profile(username):
+    mongo.db.users.remove({"username": username.lower()})
+    flash("This profile has been deleted")
+    session.pop("user")
+
+    return redirect(url_for("register"))
+
+
 # Log Out
 @app.route("/logout")
 def logout():

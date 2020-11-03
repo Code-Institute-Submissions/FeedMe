@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="center-align">Edit Profile</h3>
+<hr class="underline s8 m8 l8">
+
+<div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_profile', username=session['user']) }}">
+            <div class="card-panel grey lighten-5">
+                <!-- Username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="far fa-user prefix" style="color: #ffa083;"></i>
+                        <input id="username" name="username" value="{{user.username}}" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-ZA-z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username (5-15 characters)</label>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix" style="color: #ffa083;"></i>
+                        <input id="password" name="password" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-ZA-z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password (5-15 characters)</label>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-at prefix" style="color: #ffa083;"></i>
+                        <input id="email" name="email" value="{{user.email}}" type="email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                class="validate" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="row s8 m12 l12 center-align">
+                    <!-- Edit Button -->
+                    <div class="col s4 l12"><a href="{{url_for('edit_profile', username=user.username|lower)}}"
+                        class="btn btn-recipe edit">Done</a></div>
+                    <!-- Delete Button -->
+                    <div class="col s4"><a href="#delete-profile"
+                        class="btn btn-recipe modal-trigger delete">Delete</a></div>
+                </div>
+
+                <!-- Modal Action -->
+                <div id="delete-profile" class="modal">
+                    <div>
+                        <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                            <p>
+                                Are you sure you want to delete this recipe?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{url_for('delete_profile', username=user.username)}}"
+                                class="btn-recipe btn-small neutral modal-close del">Delete</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
