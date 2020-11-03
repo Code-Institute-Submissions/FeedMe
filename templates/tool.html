@@ -7,30 +7,30 @@
 </h3>
 
 <div class="row container recipe">
-    <div class="col s12 m8 l6">
-        <img src="{{ tool.tool_image }}" alt="{{ tool.tool_name }}" class="image-shadow">
+    <div class="col s12 m12 l6">
+        <img src="{{ tool.tool_image }}" alt="{{ tool.tool_name }}" class="image-shadow tool-image">
     </div>
     <div class="row container">
-        <div class="col s12 m3 l4">
+        <div class="col s12 m10 l6">
             <div>
-                <b>Name:</b> {{ tool.tool_name }}
+                <b>Name: </b> {{ tool.tool_name }}
             </div>
             <br>
             <div>
-                <b>Details:</b> {{ tool.tool_details }}
+                <b>Details: </b> {{ tool.tool_details }}
             </div>
             <br>
             <div>
-                <b>Description:</b> {{ tool.tool_description }}
+                <b>Description: </b> {{ tool.tool_description }}
             </div>
         </div>
     </div>
 
     <!-- Buttons -->
-    <div class="col s12 m12">
+    <div class="s12 m12">
 
         <!-- Return Button -->
-        <div class="col s12 center-align">
+        <div class="col s12 m10 center-align">
             <div class="col s4"><a href="{{ url_for('profile', username=session['user']) }}"
                 class="btn btn-light btn-recipe">Tools</a></div>
             {% if session.user|lower == "admin"|lower %}

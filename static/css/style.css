@@ -425,3 +425,14 @@ button.btn.btn-edit-recipe:hover{
     color: #4db6ac;
     border: 1px solid white;
 }
+
+
+/* ----------------------------------------------- TOOL --- */
+
+img.image-shadow.tool-image{
+    height: 440px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: right;
+    margin-bottom: 40px;
+}
