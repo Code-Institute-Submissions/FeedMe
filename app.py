@@ -140,6 +140,9 @@ def logout():
     return redirect(url_for("login"))
 
 
+# ------------------------------------- RECIPES -------------------------- #
+
+
 # Add Recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
@@ -206,6 +209,9 @@ def recipe(recipe_id):
     return render_template("recipe.html", recipe=recipe)
 
 
+# ------------------------------------- CATEGORIES -------------------------- #
+
+
 # Categories
 @app.route("/categories")
 def categories():
@@ -250,6 +256,9 @@ def delete_category(category_id):
     return redirect(url_for("categories"))
 
 
+# ------------------------------------------ TOOLS -------------------------- #
+
+
 # Cooking Tools
 @app.route("/tools")
 def tools():
@@ -261,8 +270,8 @@ def tools():
 # single tool
 @app.route("/tool/<tool_id>")
 def tool(tool_id):
-    recipe = mongo.db.tools.find_one({"_id": ObjectId(tool_id)})
-    return render_template("tool.html", recipe=recipe)
+    tool = mongo.db.tools.find_one({"_id": ObjectId(tool_id)})
+    return render_template("tool.html", tool=tool)
 
 
 # Search for Tools
@@ -289,6 +298,31 @@ def add_tool():
 
     name = mongo.db.tools.find().sort("tool_name", 1)
     return render_template("add_tool.html", name=name)
+
+
+# Delete Tool
+@app.route("/delete_tool/<tool_id>")
+def delete_tool(tool_id):
+    mongo.db.tools.remove({"_id": ObjectId(tool_id)})
+    flash("You're tool has been deleted")
+    return redirect(url_for("tools"))
+
+
+# Edit Tool
+@app.route("/edit_tool/<tool_id>", methods=["GET", "POST"])
+def edit_tool(tool_id):
+    if request.method == "POST":
+        tool = {
+            "tool_name": request.form.get("tool_name"),
+            "tool_description": request.form.get("tool_description"),
+            "tool_details": request.form.get("tool_details"),
+            "tool_image": request.form.get("tool_image")
+        }
+        mongo.db.tools.update({"_id": ObjectId(tool_id)}, tool)
+        flash("You're tool was successfully updated")
+
+    tools = mongo.db.tools.find_one({"_id": ObjectId(tool_id)})
+    return render_template("edit_tool.html", tools=tools)
 
 
 # telling the app how and where to run the application
