@@ -324,12 +324,14 @@ a.btn.btn-recipe.edit,
 a.btn-recipe.btn-small.neutral.modal-close.ed{
     background-color: #4db6ac;
     color: white;
+    display: inline-block;
 }
 
 a.btn.btn-recipe.modal-trigger.delete,
 a.btn-recipe.btn-small.neutral.modal-close.del{
     color: white;
     background-color: #c62828;
+    display: inline-block;
 }
 
 a.btn.btn-recipe.edit:hover,
@@ -337,6 +339,7 @@ a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
   background-color:white;
   color: #4db6ac;
   border: 1px solid white;
+  display: inline-block;
 }
 
 a.btn.btn-recipe.modal-trigger.delete:hover,
@@ -344,6 +347,7 @@ a.btn-recipe.btn-small.neutral.modal-close:hover{
   background-color:white;
   color: #c62828;
   border: 1px solid white;
+  display: inline-block;
 }
 
 div#delete-recipe.modal.open{
