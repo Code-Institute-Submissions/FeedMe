@@ -216,9 +216,19 @@ p.center.align{
     margin-top: 0px;
 }
 
-button.btn-small.deep-orange.accent-1.text-shadow{
+.btn-small{
     margin: 0 auto;
     display: flex;
+    border-radius: 23px;
+    font-family: 'Varela Round';
+    font-weight: 600;
+    background-color: #ffa083;
+    color: white;
+}
+
+.btn-small:hover{
+    background-color: white;
+    color: #ffa083;
 }
 
 /* ----------------------------------------------- PROFILE --- */
@@ -245,7 +255,8 @@ h5.recipe-description{
 }
 
 button.btn.btn-recipe.search,
-a.btn.btn-recipe.reset{
+a.btn.btn-recipe.reset,
+a.btn.btn-recipe.modal-trigger.delete{
     background-color: #c62828;
     color: white;
     font-family: "Varela Round", sans-serif;

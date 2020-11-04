@@ -8,8 +8,7 @@
                 <b class="deep-orange-text text-lighten-3">{{ username }}</b> !</h3>
         </div>
         <div class="col s8 m12 l12 center-align" >
-            <a  href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-recipe search">Edit</a>
-            <a  href="#delete-recipe" class="btn btn-recipe modal-trigger delete">Delete</a>
+            <a  href="{{ url_for('edit_profile', username=session['user']) }}" class="btn btn-recipe edit">Edit</a>
         </div>
     </div>
     <!----------------------------------->
