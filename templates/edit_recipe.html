@@ -81,19 +81,13 @@
                     <label for="recipe_method"></label>
                 </div>
             </div>
-            <!-- Recipe Tools -->
+            <!-- Recipe Image -->
             <div class="row">
-                <i class="fas fa-mortar-pestle prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <div id="tool_list"><input id="recipe_tools" name="recipe_tools" minlength="5"
-                        type="text" value="{{ recipe.recipe_tools }}" class="validate" placeholder="cooking tools" ></div>
-                    <button id="add_tool" name="add_tool" class="white deep-orange-text text-lighten-3">
-                        +
-                    </button>
-                    <button id="del_tool" name="del_tool" class="white deep-orange-text text-lighten-3">
-                        -
-                    </button>
-                    <label for="recipe_tools"></label>
+                    <i class="fas fa-portrait prefix"></i>
+                    <input value="{{recipe.recipe_image}}" id="recipe_image" name="recipe_image" type="text"
+                        minlength="5" class="validate" required />
+                    <label for="recipe_image">Profile Photo</label>
                 </div>
             </div>
             <!-- Preparation Time -->

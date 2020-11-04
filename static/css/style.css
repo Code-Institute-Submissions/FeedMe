@@ -317,6 +317,10 @@ div.col.s12.m3.l4{
     padding: 15px;
 }
 
+a.check-tools{
+    color: #ffa083;
+}
+
 .recipe img{
     max-width: 100%;
     height: auto;
