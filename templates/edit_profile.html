@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-user prefix" style="color: #ffa083;"></i>
-                        <input id="username" name="username" value="{{user.username}}" type="text" minlength="5"
+                        <input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-ZA-z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username (5-15 characters)</label>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-at prefix" style="color: #ffa083;"></i>
-                        <input id="email" name="email" value="{{user.email}}" type="email"
+                        <input id="email" name="email" type="email"
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                 class="validate" required>
                         <label for="email">Email</label>
@@ -38,8 +38,7 @@
                 <div class="row">
                     <div class="col s8 m12 l12 center-align" >
                         <!-- Edit Button -->
-                        <a href="{{url_for('edit_profile', username=user.username|lower)}}"
-                            class="btn btn-recipe edit">Done</a>
+                        <button type="submit" class="btn btn-recipe edit">Save</button>
                         <!-- Delete Button -->
                         <a href="#delete-profile" class="btn btn-recipe modal-trigger delete">Delete</a>
                     </div>  
@@ -55,7 +54,7 @@
                             </p>
                         </div>
                         <div>
-                            <a href="{{url_for('delete_profile', username=user.username)}}"
+                            <a href="{{url_for('delete_profile', username=session['user'])}}"
                                 class="btn-recipe btn-small neutral modal-close del">Delete</a>
                             <a class="btn-recipe btn-small neutral modal-close ed">Cancel</a>
                         </div>
