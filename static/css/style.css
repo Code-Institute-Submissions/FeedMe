@@ -31,7 +31,8 @@ body {
 
 /* ----------------------------------------------- Navigation bar --- */
 
-nav .brand-logo{
+nav .brand-logo,
+a.brand-logo.center-align.deep-orange-text.text-lighten-2{
     font-family: "Varela Round", sans-serif;
     text-transform: capitalize;
     font-size: 1.8rem;
@@ -46,6 +47,18 @@ nav ul a{
     font-family: "Varela Round", sans-serif;
     text-transform: capitalize;
     font-size: 1.3rem;
+}
+
+.sidenav li>a{
+    font-family: "Varela Round", sans-serif;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.sidenav li>a:hover{
+    background-color:white;
+    color: #ffa083;
+    border: 1px solid white;
 }
 
 /* ----------------------------------------------- Homepage --- */

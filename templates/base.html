@@ -57,9 +57,15 @@
 
         <!-- Mobile side Navigation Bar -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align deep-orange-text text-lighten-2">FeedMe</h4></li>
 			<!-- IF THE USER IS LOGGED IN -->
             {% if session.user %}
+                <li class="center-align">
+                    <h4>
+                        <a href="{{ url_for('get_recipes') }}" class="brand-logo center-align deep-orange-text text-lighten-2">
+                            FeedMe
+                        </a>
+                    </h4>
+                </li>
                 <li class="center-align"><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                 <li class="center-align"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li class="center-align"><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
@@ -72,7 +78,13 @@
                 <li class="center-align"><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <!-- IF THE USER IS LOGGED OUT -->
-                <li class="center-align"><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="center-align">
+                    <h4>
+                        <a href="{{ url_for('home') }}" class="brand-logo center-align deep-orange-text text-lighten-2">
+                            FeedMe
+                        </a>
+                    </h4>
+                </li>
                 <li class="center-align"><a href="{{ url_for('login') }}">Log In</a></li>
                 <li class="center-align"><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
