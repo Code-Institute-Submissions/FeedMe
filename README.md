@@ -101,8 +101,54 @@ As a user I would like to know more about what cooking tools are necessary to ha
 - The user can only edit and delete recipes that belong to them.
 - The user can only delete its own profile.
 - Once In the “Recipes” page the user can browse, search and click on the available recipes.
-- The user can search for recipes and if the recipe isn't avaiable, a message will be displayed.
-- In the "Recipes" page it's possible for the user to see which recipe its theres because it displays an edit button.
+- The user can search for recipes and if the recipe isn't available, a message will be displayed.
+- In the "Recipes" page, it's possible for the user to see which recipe is theirs because it displays an edit button.
 - When a recipe is clicked, it redirects the user to the recipe page which contains all the information about it, and encourages the user to check the "Cooking Tools" page.
 - The "Cooking Tools" page promotes kitchen tools that are vital to have in order to cook the recipes displayed.
 - If the user is the Admin then it can add new Categories and Tools or delete the existing ones.
+
+
+### Features Left to Implement
+
+- In future versions of the website, I would like to implement an image gallery for each recipe in order to make the recipe process easier to understand.
+- I would like it to be possible for users to upload images from their phone or computer instead of inserting a URL.
+- I would like it to be possible to add a feature to each recipe in order for the user to share it on social media or with contacts.
+- It would be a positive experience for the user if each recipe had a comment section so other users could comment about the recipe.
+
+
+# Technologies Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+  - The project uses HTML5 to construct the pages within the application.
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+  - The project uses CSS3 in order to style the HTML5 and Bootstrap elements and components.
+- [Materialize (ver 1.0.0)](https://materializecss.com/)
+  - The project uses the Materialize components for the design framework.
+- [Jquery (ver 3.4.1)](https://jquery.com/download/)
+  - The project uses the Jquery in order to make it much easier to use JavaScript.
+- [Gitpod](https://www.gitpod.io/)
+  - The project uses Gitpod as the primary IDE for coding.
+- [Github](https://github.com/)
+  - The project uses Github for remote storing of code online.
+- [Balsamiq](https://balsamiq.com/)
+  - The project uses Balsamiq to create wireframes.
+- [Adobe Xd CC](https://www.adobe.com/pt/products/xd.html)
+  - The project uses Adobe Xd CC to create mockups.
+- [Flask (ver 1.1.2)](https://flask.palletsprojects.com/en/1.1.x/)
+  - The project uses Flask as a microframework.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+  - The project uses Jinja for templating with Flask.
+- [Werkzeug (ver 1.0.1)](https://werkzeug.palletsprojects.com/en/1.0.x/)
+  - The project uses Werkzeug for password hashing, authentication and authorisation.
+- [Heroku](https://www.heroku.com/)
+  - The project uses Heroku for app hosting.
+- [Python](https://www.python.org/)
+  - The project uses Python as a programming language.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+  - The project uses MongoDB Atlas as a cloud database service.
+
+
+
+
+
+
