@@ -148,6 +148,100 @@ As a user I would like to know more about what cooking tools are necessary to ha
   - The project uses MongoDB Atlas as a cloud database service.
 
 
+# Testing
+
+**1. Logo:**
+
+   1. If you're logged out go to a page that is not the homepage.
+   2. Try to click on the logo and verify that it leads you to the homepage.
+   3. If you're logged in go to a page that is not the recipes page.
+   4. Try to click on the logo and verify that it leads you to the recipes.
+
+**2. Navigation Bar Pages:**
+
+   1. Go to the navigation bar.
+   2. Hover over the pages and verify that their background changes color individualy.
+   3. Try to click on them and verify that you are able to go to the page you selected.
+   4. Register and login as Admin and verify that "Categories" and "Add Tool" is added to your navigation bar.
+
+**3. Add Recipe:**
+
+   1. Go to the Add Recipe page.
+   2. Try to click on categories and verify that the available categories appear.
+   3. Try to do the same in difficulty field and verify that the available levels appear.
+   4. Try to leave the fields empty and verify that a red line appears, indicating that it's a required field.
+   5. Try to cick the clock icon and verify that a pop up shows to select the time.
+   6. Try to submit the recipe and verify that a confirmation message appears.
+   7. Go to your profile and verify that your recipe was added.
+
+**4. Edit Recipe:**
+    
+   1. Go to your profile and select a recipe.
+   2. Try to click on the edit button and verify that it opens a form with the information about the recipe.
+   3. Try to change the information in any field.
+   4. Try to click on the cancel button and verify that a pop up message appears asking if you're sure you want to cancel.
+   5. Try to click yes and verify that it leads you back to your profile, or click no and verify that you continue to edit the recipe.
+   6. Try to click on the done button and verify that a confirmation message appears and you can see the new changes.
+   7. Go to your profile and verify that your recipe was edited.
+
+**5. Delete Recipe:**
+
+   1. Go to your profile and select a recipe.
+   2. Try to click on the edit button and verify that it opens a form with the information about the recipe.
+   3. Try to cick on the delete button and verify that a pop up message appears asking if you're sure you want to delete the recipe.
+   4. Try to click no and verify that you continue to edit the recipe, or click yes and verify that it leads you to the recipes page and a confirmation message appears.
+   5. Go to your profile and verify that your recipe has been deleted.
+
+**6. Add Categories:**
+
+   1. Register and login as Admin.
+   2. Try to click on "Categories" and verify that it leads you to the Categories page.
+   3. Try to add a category an verify that it leads you to the add category page with a form to fill.
+   4. Press the add category button and verify that the new category is displaying in the Categories page.
+   5. Try to add a new recipe and verify that the new category appears when selecting the category in the recipe form.
+
+**7. Delete Categories:**
+
+   1. Register and login as Admin.
+   2. Try to click on "Categories" and verify that it leads you to the Categories page.
+   3. Try to click the delete button on one of the categories and verify that a pop up message appears asking if you're sure you want to delete the category.
+   4. Try to click no and verify that you go back to the categories page, or click yes and verify that it leads you to the categories page and a confirmation message appears.
+   5. Verify that the category is no longer in the Categories page.
+
+**8. Add Tools:**
+
+   1. Register and login as Admin.
+   2. Try to click on "Cooking Tools" and verify that it leads you to the Tools page.
+   3. Try to click on "Add Tool" and verify that it leads you to the add tool page with a form to fill.
+   4. Try to leave the form empty and verify that a red line appears, indicating that it is required to fill.
+   5. Press the add tool button and verify that the new tool is displaying in the Tools page.
+
+**9. Delete Tools:**
+
+   1. Register and login as Admin.
+   2. Try to click on "Cooking Tools" and verify that it leads you to the Tools page.
+   3. Try to click on a tool and verify that it leads you to the tool page.
+   4. Try to click on the delete button and verify that a pop up message shows up, asking if you're sure you want to delete the tool.
+   5. Press no and verify that it leads you back to the tools page, or press yes and verify that it leads you back to the tools page with a confirmation message.
+   6. Verify that the tool is no longer in the tools page.
+
+**10. Edit Profile:**
+
+   1. Go to your profile and press the edit button and verify that it leads you to the edit profile with a form containing your information.
+   2. Change your name and/or image and press save and verify that it leads you back to your profile with a confirmation message and your username and image have been updated.
+   3. Try to login with your new username and verify that it confirms it.
+   4. Try to login with you old username and verify that the username doesn't exist.
+
+**11. Delete Profile:**
+
+   1. Go to your profile and press the edit button and verify that it leads you to the edit profile with a form containing your information.
+   2. Press the "delete" button and verify that a pop up message appears, asking you if you're sure you want to delete your profile.
+   3. Press no and verify that it leads you back to your profile, or press yes and verify that it leads you to the register page and a confirmation message shows up.
+   4. Try to login with your information and verify that the username doesn't exist.
+
+**12. Social Media Icons:**
+   1. Hover over the social media icons and verify that they change color individualy.
+   2. Try to click on any social media icon and verify that it opens a new page.
 
 
 
