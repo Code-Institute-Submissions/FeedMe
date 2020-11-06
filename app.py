@@ -74,7 +74,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower()
+            "email": request.form.get("email").lower(),
+            "user_image": request.form.get("user_image").lower()
         }
         mongo.db.users.insert_one(register)
 
@@ -115,17 +116,14 @@ def login():
 
 
 # Profile
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # this will grab the session's user username from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipes = list(mongo.db.recipes.find({"created_by": username.lower()}))
+@app.route("/profile/", methods=["GET", "POST"])
+def profile():
+    recipes = list(mongo.db.recipes.find({"created_by": session["user"]}))
 
     # making sure that a user can't force into other users profile
     if session["user"]:
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=session["user"], recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -134,22 +132,14 @@ def profile(username):
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username):
     if request.method == "POST":
-        # check if the username already exists in the database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            flash("Username already in use.")
-            return redirect(url_for("register"))
-
         submit = {
-            "username": request.form.get("username").lower(),
+            "username": session["user"],
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower()
+            "email": request.form.get("email").lower(),
+            "user_image": request.form.get("user_image").lower()
         }
         mongo.db.users.update({"username": username.lower()}, submit)
 
-        session["user"] = request.form.get("username").lower()
         flash("You have been successfully registered!")
         return redirect(url_for("profile", username=session["user"]))
 
