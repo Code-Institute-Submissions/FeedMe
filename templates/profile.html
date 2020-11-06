@@ -46,7 +46,7 @@
         <div class="col s12 m3 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="{{url_for('static', filename='images/soups.jpg')}}" alt="{{ recipe.recipe_name }}">
+                    <img class="responsive-img image" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div class="card-content">
                     <a href="{{url_for('recipe', recipe_id=recipe._id)}}">

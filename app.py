@@ -216,6 +216,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_method": request.form.get("recipe_method[]"),
+            "recipe_image": request.form.get("recipe_image"),
             "time": request.form.get("time"),
             "difficulty": request.form.get("difficulty"),
             "created_by": session["user"]
@@ -262,7 +263,8 @@ def categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name"),
+            "category_image": request.form.get("category_image")
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
@@ -276,7 +278,8 @@ def add_category():
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name"),
+            "category_image": request.form.get("category_image")
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("You're Category Has Been Updated")

@@ -71,7 +71,7 @@
             <!-- Recipe Image -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix deep-orange-text text-lighten-3"></i>
+                    <i class="fas fa-image prefix deep-orange-text text-lighten-3"></i>
                     <textarea id="recipe_image" name="recipe_image" class="materialize-textarea" minlength="5"
                         maxlength="500" required></textarea>
                     <label for="recipe_image">Add Image URL</label>
@@ -88,12 +88,12 @@
                 <div class="input-field col s6">
                     <i class="fas fa-balance-scale-left prefix deep-orange-text text-lighten-3"></i>
                     <select id="difficulty" name="difficulty" class="validate" required>
-                        <option value="" disabled selected>Dificulty</option>
+                        <option value="" disabled selected></option>
                         {% for difficulty in difficulties %}
                             <option value="{{ difficulty.level }}">{{ difficulty.level }}</option>
                         {% endfor %}
                     </select>
-                    <label for="difficulty"></label>
+                    <label for="difficulty">Dificulty</label>
                 </div>
             </div>
             <!-- Submit Recipe Button -->

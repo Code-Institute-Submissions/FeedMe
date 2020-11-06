@@ -8,16 +8,27 @@
             <!-- Category Name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="far fa-folder-open prefix light-green-text text-darken-4"></i>
+                    <i class="far fa-folder-open prefix deep-orange-text text-lighten-3"></i>
                     <input id="category_name" name="category_name" minlength="3" maxlength="25"
                         type="text" class="validate" required>
                     <label for="category_name">Category Name</label>
                 </div>
             </div>
+            <!-- Category Image -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-image prefix deep-orange-text text-lighten-3"></i>
+                    <textarea id="category_image" name="category_image" class="materialize-textarea" minlength="5"
+                        maxlength="500" required></textarea>
+                    <label for="category_image">Add Image URL</label>
+                </div>
+            </div>
+            <!-- End Categroy Image -->
+
             <!-- Submit Recipe Button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-green darken-1 text-shadow">
+                    <button type="submit" class="btn-large add-recipe">
                         Add Category <i class="fas fa-plus-square right"></i>
                     </button>
                 </div>

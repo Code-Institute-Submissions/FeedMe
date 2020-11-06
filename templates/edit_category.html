@@ -8,23 +8,51 @@
             <!-- Category Name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="far fa-folder-open prefix light-green-text text-darken-4"></i>
+                    <i class="far fa-folder-open prefix deep-orange-text text-lighten-3"></i>
                     <input id="category_name" name="category_name" minlength="3" maxlength="25"
                         type="text" value="{{ category.category_name }}" class="validate" required>
                     <label for="category_name">Category Name</label>
                 </div>
             </div>
+            <!-- Category Image -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-image prefix deep-orange-text text-lighten-3"></i>
+                    <textarea id="category_image" name="category_image" class="materialize-textarea" minlength="5"
+                        maxlength="500" type="text" value="{{ category.category_image }}" required></textarea>
+                    <label for="category_image">Add Image URL</label>
+                </div>
+            </div>
+            <!-- End Categroy Image -->
+
             <!-- Submit Recipe Button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('categories') }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
+                    <a href="#delete-recipe" class="btn modal-trigger btn-cancel-recipe">
+                        Cancel <i class="fas fa-times"></i>
                     </a>
-                    <button type="submit" class="btn-large light-green darken-1 text-shadow">
-                        Edit Category <i class="fas fa-edit right"></i>
+                    <button type="submit" class="btn btn-edit-recipe">
+                        Save <i class="fas fa-check"></i>
                     </button>
                 </div>
             </div>
+
+            <!-- Modal Action -->
+                <div id="delete-recipe" class="center-align modal">
+                    <div>
+                        <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                            <p>
+                                Are you sure you want to cancel?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('categories')}}"
+                                class="btn-recipe btn-small neutral modal-close del">Yes</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">No</a>
+                        </div>
+                    </div>
+                </div>
         </form>
     </div>
 
