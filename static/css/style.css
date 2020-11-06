@@ -468,3 +468,22 @@ img.image-shadow.tool-image{
     object-position: right;
     margin-bottom: 40px;
 }
+
+/* ----------------------------------------------- CATEGORIES --- */
+
+a.btn-large.add-recipe{
+    background-color: #4db6ac;
+    color: white;
+    border-radius: 25px;
+ 
+}
+
+i.fas.fa-plus-square.right{
+    ;
+}
+
+a.btn-large.add-recipe:hover{
+    background-color:white;
+    color: #4db6ac;
+    border: none;
+}
