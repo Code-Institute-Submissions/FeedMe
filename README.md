@@ -244,5 +244,65 @@ As a user I would like to know more about what cooking tools are necessary to ha
    2. Try to click on any social media icon and verify that it opens a new page.
 
 
+# Observations
+
+- The website has been checked for responsiveness on a multitude of screen sizes from PC to portable devices, such as tablets and mobile phones.
+
+- All HTML code was run through the [W3C HTML Validator](https://validator.w3.org/) and returned no errors.
 
 
+# Deployment
+
+The website is hosted via [GitHub](https://github.com/), with the source code being available on [my repository](https://github.com/gaspar91/FeedMe).
+
+### How I Did It
+
+- To deploy this project I followed these steps:
+
+    1. Open my [GitHub repository](https://github.com/gaspar91/FeedMe) project page.
+
+    2. Go to **Settings** at the top right of the page.
+
+    3. Scroll down to the **Github Pages** section.
+
+    4. Select **Master Branch** in the *Source* field and save it.
+
+    5. After refreshing the page, go back to **Github Pages** section were now it will say "*Your site is published at*" with a link to the website in front of it.
+
+### How You Can Access It
+- In order to run this project locally you should follow these steps:
+
+    1. Click the green *'clone or download'* button in the [GitHub repository](https://github.com/gaspar91/FeedMe) for the project.
+
+    2. Copy the link provided by clicking the **clipboard button** to the right of the link.
+
+    3. In your terminal, type ***git clone***, paste in the previously copied link, and hit return.
+
+    4. The website should now be installed on your device.
+
+- If you already have an account on [GitHub](https://github.com/) then you should follow these steps:
+
+    1. Make sure that you are logged in to your [GitHub account](https://github.com/).
+
+    2. In the [project repository](https://github.com/gaspar91/FeedMe), click the small green button reading **gitpod** which is placed next to the **clone or download** button.
+
+
+# Credits
+
+### Content 
+
+ - The code for the **navigation bar, forms and views** was duplicated from [Code Institute's Task Manager Project](https://github.com/Code-Institute-Solutions/TaskManager/tree/flask-rebuild-2020)
+ - The code for the **social media** was duplicated from [Code Institute's Love Running Project](https://github.com/Code-Institute-Org/love-running-rebuild)
+
+### Media
+
+The photos used in this website were obtained from [Unsplash](https://unsplash.com/)
+
+### Acknowledgements
+
+I received inspiration for this project from:
+
+- [Code Institute](https://codeinstitute.net/)
+- [Behance](https://www.behance.net/)
+- [ww3Schools](https://www.w3schools.com/)
+- [Stack Overflow](https://stackoverflow.com/)
