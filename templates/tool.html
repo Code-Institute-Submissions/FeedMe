@@ -31,7 +31,7 @@
 
         <!-- Return Button -->
         <div class="col s12 m10 center-align">
-            <div class="col s4"><a href="{{ url_for('profile', username=session['user']) }}"
+            <div class="col s4"><a href="{{ url_for('tools', username=session['user']) }}"
                 class="btn btn-light btn-recipe">Tools</a></div>
             {% if session.user|lower == "admin"|lower %}
                 <!-- Edit Button -->
