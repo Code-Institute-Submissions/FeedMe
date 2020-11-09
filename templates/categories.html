@@ -18,7 +18,7 @@
         {% if categories|length > 0 %}
         <div class="row center-align">
             {% for category in categories %}
-                <div class="col s12 m3 l3">
+                <div class="col s12 m4 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{category.category_image}}" alt="{{category.category_name}}">
@@ -38,5 +38,11 @@
             {% endfor %}
         </div>
         {% endif %}
+
+        <ul class="pagination center-align">
+            <li class="disabled"><a href="#!"><i class="material-icons"></i></a></li>
+            <li class="active deep-orange lighten-2"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons"></i></a></li>
+        </ul>
 
 {% endblock %}

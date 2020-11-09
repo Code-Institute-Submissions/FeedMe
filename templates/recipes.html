@@ -27,7 +27,7 @@
     {% if recipes|length > 0 %}
     <div class="row center-align">
         {% for recipe in recipes %}
-        <div class="col s12 m3 l3">
+        <div class="col s12 m6 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{recipe.recipe_image}}" alt="{{ recipe.recipe_name }}">
@@ -58,5 +58,11 @@
         <b><h4 class="red-text text-darken-4 center-align">
             <i class="fas fa-frown red-text text-darken-4"></i> No Recipes Found</h4></b>
     {% endif %}
+
+    <ul class="pagination center-align">
+        <li class="disabled"><a href="#!"><i class="material-icons"></i></a></li>
+        <li class="active deep-orange lighten-2"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons"></i></a></li>
+    </ul>
    
 {% endblock %}
