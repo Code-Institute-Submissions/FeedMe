@@ -46,39 +46,23 @@
             </div>
             <!-- Recipe Ingredients -->
             <div class="row">
-                <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                        <div id="ingredients_list">
-                            <div class="ingredients">
-                                {% for ingredient in recipe.recipe_ingredients %}
-                                    <input name="recipe_ingredients[]" id="recipe_ingredients" minlength="5"
-                                        type="text" value="{{ ingredient }}" class="validate"
-                                            placeholder="ingredients" required />
-                                <button type="button" id="add_ingredient" name="add_ingredient" class="white deep-orange-text text-lighten-3">
-                                    +
-                                </button>
-                                <button type="button" id="del_ingredient" name="del_ingredient" class="white deep-orange-text text-lighten-3">
-                                    -
-                                </button>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    <label for="recipe_ingredients"></label>
+                    <i class="fas fa-shopping-basket prefix deep-orange-text text-lighten-3"></i>
+                    <textarea name="recipe_ingredients" id="recipe_ingredients" minlength="5" type="text"
+                        class="materialize-textarea validate" required>
+                        {{- recipe.recipe_ingredients -}}
+                    </textarea>
+                    <label for="recipe_ingredients">Recipe Ingredients</label>
                 </div>
             </div>
             <!-- Recipe Method -->
             <div class="row">
-                <i class="fas fa-mitten prefix deep-orange-text text-lighten-3 input-field col s12"></i>
                 <div class="input-field col s12">
-                    <div id="method_list"><input id="recipe_method" name="recipe_method[]" minlength="5"
-                       type="text" value="{{ recipe.recipe_method[] }}" class="validate" placeholder="cooking method"></div>
-                    <button id="add_method" name="add_method" class="white deep-orange-text text-lighten-3">
-                        +
-                    </button>
-                    <button id="del_method" name="del_method" class="white deep-orange-text text-lighten-3">
-                        -
-                    </button>
-                    <label for="recipe_method"></label>
+                    <i class="fas fa-mitten prefix deep-orange-text text-lighten-3"></i>
+                    <input id="recipe_method" name="recipe_method" minlength="5" type="text"
+                        value="{{ recipe.recipe_method }}" class="materialize-textarea validate"
+                            placeholder="cooking method">
+                    <label for="recipe_method">Recipe Method</label>
                 </div>
             </div>
             <!-- Recipe Image -->

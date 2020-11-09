@@ -40,9 +40,7 @@
         <br />
         <span><b>Ingredients:</b></span>
         <ul>
-            {% for ingredient in recipe.recipe_ingredients  %}
-                <li>{{ ingredient }}</li>
-            {% endfor %}
+            <li>{{ recipe.recipe_ingredients }}</li>
         </ul>
         <br />
         <span><b>Method {{ count }} :</b></span>    
