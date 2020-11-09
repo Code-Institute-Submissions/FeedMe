@@ -19,7 +19,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-image prefix deep-orange-text text-lighten-3"></i>
                     <textarea id="category_image" name="category_image" class="materialize-textarea" minlength="5"
-                        maxlength="500" type="text" value="{{ category.category_image }}" required></textarea>
+                        maxlength="500" type="text" required>
+                        {{- category.category_image -}}
+                    </textarea>
                     <label for="category_image">Add Image URL</label>
                 </div>
             </div>

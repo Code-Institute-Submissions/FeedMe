@@ -51,10 +51,32 @@
             <!-- Submit Tool Button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large add-recipe">
+                    <!-- Add Tool-->
+                    <button type="submit" class="btn add-recipe">
                         Add Tool <i class="fas fa-plus-square right"></i>
                     </button>
+                    <!-- Cancel -->
+                    <a href="#cancel-tool" class="btn modal-trigger btn-cancel-recipe">
+                        Cancel <i class="fas fa-times right"></i>
+                    </a>
                 </div>
             </div>
+
+            <!-- Modal Action -->
+                <div id="cancel-tool" class="center-align modal">
+                    <div>
+                        <div>
+                            <i class="fas fa-exclamation-circle red-text text-darken-3"></i>
+                            <p>
+                                Are you sure you want to cancel?
+                            </p>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('tools')}}"
+                                class="btn-recipe btn-small neutral modal-close del">Yes</a>
+                            <a class="btn-recipe btn-small neutral modal-close ed">No</a>
+                        </div>
+                    </div>
+                </div> 
 
 {% endblock %}

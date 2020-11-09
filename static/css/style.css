@@ -384,6 +384,7 @@ div.row.card-panel{
     max-width: 80%;
     margin: 0 auto;
     font-family: "Varela Round", sans-serif;
+    margin-top: 50px;
 }
 
 i.fas.fa-shopping-basket.prefix.deep-orange-text.text-lighten-3,
@@ -393,29 +394,22 @@ i.fas.fa-mortar-pestle.prefix.deep-orange-text.text-lighten-3{
     margin-bottom: -10px;
 }
 
-button#add_ingredient.white.deep-orange-text.text-lighten-3,
-button#add_method.white.deep-orange-text.text-lighten-3,
-button#add_tool.white.deep-orange-text.text-lighten-3,
-button#del_ingredient.white.deep-orange-text.text-lighten-3,
-button#del_method.white.deep-orange-text.text-lighten-3,
-button#del_tool.white.deep-orange-text.text-lighten-3{
-    border: 2px solid #ffccbc;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
 .select-wrapper input.select-dropdown,
 .dropdown-content li{
     font-family: "Varela Round", sans-serif;
 }
 
-button.btn-large.add-recipe{
+button.btn.add-recipe{
     background-color: #4db6ac;
     color: white;
     border-radius: 25px;
+    font-family: "Varela Round", sans-serif;
+    margin-right: 5px;
+    width: fit-content;
+    font-size: 15px;
 }
 
-button.btn-large.add-recipe:hover{
+button.btn.add-recipe:hover{
     background-color:white;
     color: #4db6ac;
     border: 1px solid white;
@@ -476,10 +470,6 @@ a.btn-large.add-recipe{
     color: white;
     border-radius: 25px;
  
-}
-
-i.fas.fa-plus-square.right{
-    ;
 }
 
 a.btn-large.add-recipe:hover{
