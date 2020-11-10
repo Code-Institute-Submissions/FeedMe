@@ -13,13 +13,6 @@
     </div>
     <!----------------------------------->
 
-    <!-- User Image -->
-    <div class="row s12 m8 offset-m2">
-        <div class="card-image">
-            <img class="responsive-img image" src="{{ username.user_image }}" alt="{{ username.user_image }}">
-        </div>
-    </div>
-
     <!-- My Recipes Title -->
     <h3 class="black-text center-align">
         My Recipes
@@ -46,6 +39,14 @@
         </div>
     </div>
     <!-- End Search Bar ------------------------->
+
+    <!-- Search Results-->
+    <div class="row valign-wrapper center-align" >
+        <div class="col s12 m12 l12 total-results">
+            Total Recipes: {{recipes|length}}
+        </div>
+    </div>
+    <!-- End Search Results-->
 
     <!-- User Recipes --------------------->
     <div class="row center-align">

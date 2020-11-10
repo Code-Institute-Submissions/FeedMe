@@ -18,6 +18,7 @@ body {
 
 .flashes h4{
     line-height: 2;
+    text-transform: uppercase;
 }
 
 .btn-small{
@@ -344,6 +345,7 @@ a.check-tools{
     font-weight: bold;
     border-radius: 23px;
     width: 100px;
+    font-family: "Varela Round", sans-serif;
 }
 
 a.btn.btn-recipe.edit,
@@ -468,7 +470,7 @@ img.image-shadow.tool-image{
     height: 440px;
     max-width: 100%;
     object-fit: cover;
-    object-position: right;
+    object-position: center;
     margin-bottom: 40px;
 }
 
@@ -522,5 +524,44 @@ a.btn-large.add-recipe:hover{
 
     .caption h3{
         font-size: 20px;
+    }
+
+    .sidenav li a{
+        font-size: 20px;
+    }
+
+    button.btn.btn-recipe.search,
+    a.btn.btn-recipe.reset{
+        font-size: 10px;
+        width: 70%;
+        margin-bottom: 10px;
+    }
+
+    .card .card-content .card-title{
+        font-size: 30px;
+    }
+
+    h5.recipe-description{
+        font-size: 20px;
+    }
+
+    .recipe-details{
+        margin-top: 40px;
+    }
+
+    div.row.card-panel{
+        max-width: 90%;
+    }
+
+    button.btn.add-recipe{
+        margin-bottom: 10px;
+    }
+
+    img.image-shadow.tool-image{
+        height: 350px;
+    }
+
+    .flashes h4{
+        font-size: 15px;
     }
 }

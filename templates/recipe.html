@@ -11,7 +11,7 @@
         <img class="responsive-img image-shadow image" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
     </div>
     <div class="row container">
-        <div class="col s12 m3 l4">
+        <div class="col s10 m3 l4 recipe-details">
             <div>
                 <b>Category:</b> {{ recipe.category_name }}
             </div>
@@ -48,11 +48,12 @@
             {{ recipe.recipe_method }}
         </ul>
         <br />
+    </div>
 
-        <!-- Buttons -->
+    <!-- Buttons -->
 
         <!-- Return Button -->
-        <div class="col s12 center-align">
+        <div class="col s12 center-align" style="padding: 0px;">
             <div class="col s4"><a href="{{ url_for('profile', username=session['user']) }}"
                 class="btn btn-light btn-recipe">Recipes</a></div>
             {% if session.user|lower == recipe.created_by|lower %}
@@ -81,7 +82,6 @@
                 </div>
             {% endif %}
         </div>
-    </div>
 </div>
 
 {% endblock %}

@@ -23,6 +23,14 @@
     </div>
     <!-- End Search Bar -->
 
+    <!-- Search Results-->
+    <div class="row valign-wrapper center-align" >
+        <div class="col s12 m12 l12 total-results">
+            Total Tools: {{tools|length}}
+        </div>
+    </div>
+    <!-- End Search Results-->
+
     <!-- Tools --------------------->
     {% if tools|length > 0 %}
     <div class="row center-align">
@@ -30,7 +38,9 @@
         <div class="col s12 m3 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="{{ tool.tool_image }}" alt="{{ tool.tool_name }}" />
+                    <a href="{{url_for('tool', tool_id=tool._id)}}">
+                        <img src="{{ tool.tool_image }}" alt="{{ tool.tool_name }}" />
+                    </a>
                 </div>
                 <div class="card-content">
                     <a href="{{url_for('tool', tool_id=tool._id)}}">

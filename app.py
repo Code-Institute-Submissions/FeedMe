@@ -75,8 +75,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email").lower(),
-            "user_image": request.form.get("user_image").lower()
+            "email": request.form.get("email").lower()
         }
         mongo.db.users.insert_one(register)
 
@@ -311,7 +310,8 @@ def tool(tool_id):
 def search_tool():
     query = request.form.get("query")
     tools = list(mongo.db.tools.find({"$text": {"$search": query}}))
-    return render_template("tools.html", tools=tools)
+    result = mongo.db.tool.count({"$text": {"$search": query}})
+    return render_template("tools.html", tools=tools, result=result)
 
 
 # Add Tool
