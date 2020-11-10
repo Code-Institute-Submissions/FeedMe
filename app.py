@@ -42,7 +42,8 @@ def get_recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
+    result = mongo.db.recipes.count({"$text": {"$search": query}})
+    return render_template("recipes.html", recipes=recipes, result=result)
 
 
 # Search for the user's Recipes in User Profile
