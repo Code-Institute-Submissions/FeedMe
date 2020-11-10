@@ -23,6 +23,7 @@
             </div>
         </form> 
     </div>
+    <!-- End Search Bar -->
 
     <!-- Search Results-->
     <div class="row valign-wrapper center-align" >
@@ -30,15 +31,13 @@
             Total results: {{recipes|length}}
         </div>
     </div>
-                <!-- End Search Results-->
-
-    <!-- End Search Bar -->
+    <!-- End Search Results-->
 
     <!-- User Recipes --------------------->
     {% if recipes|length > 0 %}
     <div class="row center-align">
         {% for recipe in recipes %}
-        <div class="col s12 m6 l3">
+        <div class="col s12 m12 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{recipe.recipe_image}}" alt="{{ recipe.recipe_name }}">

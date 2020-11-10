@@ -495,3 +495,32 @@ a.btn-large.add-recipe:hover{
     font-size: 18px;
     margin-bottom: 20px;
 }
+
+
+/* ----------------------------------------------------- Media Queries --- */
+
+/* --------- Small Screens --- */
+@media (max-width: 640px){
+    .brand-logo .fa-cookie-bite{
+        margin-top: 12px;
+    }
+
+    nav .brand-logo,
+    a.brand-logo.center-align.deep-orange-text.text-lighten-2{
+        width: fit-content;
+    }
+    
+    .home-img,
+    .opacity{
+        height: calc(100vh - 7px);
+    }
+
+    .caption h1{
+        font-size: 35px;
+        margin-top: 10px;
+    }
+
+    .caption h3{
+        font-size: 20px;
+    }
+}

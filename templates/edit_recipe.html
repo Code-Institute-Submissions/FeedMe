@@ -85,8 +85,8 @@
                 <!-- Dificulty -->
                 <div class="input-field col s6">
                     <i class="fas fa-balance-scale-left prefix deep-orange-text text-lighten-3"></i>
-                    <select id="difficulty" name="difficulty" class="validate">
-                        <option value="" disabled selected>Dificulty</option>
+                    <select id="difficulty" name="difficulty" class="validate" required>
+                        <option value="" disabled>Dificulty</option>
                         {% for difficulty in difficulties %}
                             {% if difficulty.level == recipe.level %}
                                 <option value="{{ difficulty.level }}" selected>{{ difficulty.level }}</option>
