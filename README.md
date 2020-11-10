@@ -255,21 +255,15 @@ As a user I would like to know more about what cooking tools are necessary to ha
 
 The website is hosted via [GitHub](https://github.com/), with the source code being available on [my repository](https://github.com/gaspar91/FeedMe).
 
-### How I Did It
+### Requirements
 
-- To deploy this project I followed these steps:
+- **Python3** to run your application
+- **PIP** to install all app requirements
+- **IDE** of your choice - I used Gitpod
+- A **MongoDB Atlas** account for database development
 
-    1. Open my [GitHub repository](https://github.com/gaspar91/FeedMe) project page.
 
-    2. Go to **Settings** at the top right of the page.
-
-    3. Scroll down to the **Github Pages** section.
-
-    4. Select **Master Branch** in the *Source* field and save it.
-
-    5. After refreshing the page, go back to **Github Pages** section were now it will say "*Your site is published at*" with a link to the website in front of it.
-
-### How You Can Access It
+### How To Access It
 - In order to run this project locally you should follow these steps:
 
     1. Click the green *'clone or download'* button in the [GitHub repository](https://github.com/gaspar91/FeedMe) for the project.
@@ -278,14 +272,80 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
 
     3. In your terminal, type ***git clone***, paste in the previously copied link, and hit return.
 
-    4. The website should now be installed on your device.
+    4. Create a file called ".flaskenv" and add the following:
+        - **FLASK_APP=run.py**
+        - **FLASK_ENV=development**
 
-- If you already have an account on [GitHub](https://github.com/) then you should follow these steps:
+    5. Install the required modules with the command **pip -r requirements.txt**.
 
-    1. Make sure that you are logged in to your [GitHub account](https://github.com/).
+    6. If you don't have it yet, create a free account on [MongoDB](https://mongodb.com/) and create a new Database called **Database3**.
 
-    2. In the [project repository](https://github.com/gaspar91/FeedMe), click the small green button reading **gitpod** which is placed next to the **clone or download** button.
+    7. Then create the following collections in that Database:
+        - **categories**
+            - **_id:**< ObjectId >
+            - **category_name:**< string >
+            - **category_image:**< string >
+        
+        - **difficulty**
+            - **_id:**< ObjectId >
+            - **level:**< string >
+        
+        - **recipes**
+            - **_id:**< ObjectId >
+            - **category_name:**< string >
+            - **recipe_name:**< string >
+            - **recipe_description:**< string >
+            - **recipe_ingredients:**< string >
+            - **recipe_method:**< string >
+            - **recipe_image:**< string >
+            - **time:**< string >
+            - **difficulty:**< string >
+            - **created_by:**< string >
+        
+        - **difficulty**
+            - **_id:**< ObjectId >
+            - **tool_name:**< string >
+            - **tool_description:**< string >
+            - **tool_details:**< string >
+            - **tool_image:**< string >
+        
+        - **users**
+            - **_id:**< ObjectId >
+            - **username:**< string >
+            - **password:**< string >
+            - **email:**< string >
+    
+    8. You should now be able to run this application locally by typing **flask run**.
 
+
+### Deployment to Heroku
+
+   1. Create a **requirements.txt** file by typing **pip3 freeze --local > requirements.txt** into the terminal line.
+
+   2. Create a Procfile by typing **echo web: python app.py > Procfile**.
+
+   3. Add, commit and push these changes to Github.
+
+   4. Navigate to the [Heroku](https://heroku.com/).
+
+   5. Create new app and give it a unique name.
+
+   6. Choose the region that is closest to you.
+
+   7. Go to the **Deploy** tab and choose **Github**.
+
+   8. Search for the correct repository and connect.
+
+   9. Go to Heroku **Settings** and navigate to **Config Vars**.
+
+   10. Set the following:
+        - **IP = 0.0.0.0**
+        - **MONGO_DBNAME = [Name of MongoDB]**
+        - **MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority**
+        - **PORT = 5000**
+        - **SECRET_KEY = [Secret key]**
+
+    11. Go to the Deploy tab and **Deploy Branch**, ensuring that the master branch is selected.
 
 # Credits
 
