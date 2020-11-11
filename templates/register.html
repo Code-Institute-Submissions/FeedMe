@@ -7,7 +7,7 @@
     </h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m10 l8 offset-m1 offset-l2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel grey lighten-5">
                 <!-- Username -->
                 <div class="row">
@@ -15,7 +15,7 @@
                         <i class="far fa-user prefix" style="color: #ffa083;"></i>
                         <input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-ZA-z0-9]{5,15}$" class="validate" required>
-                        <label for="username">Username (5-15 characters)</label>
+                        <label for="username" class="label">Username (5-15 characters)</label>
                     </div>
                 </div>
                 <!-- Password -->
@@ -24,7 +24,7 @@
                         <i class="fas fa-key prefix" style="color: #ffa083;"></i>
                         <input id="password" name="password" type="password" minlength="5"
                             maxlength="15" pattern="^[a-ZA-z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password (5-15 characters)</label>
+                        <label for="password" class="label">Password (5-15 characters)</label>
                     </div>
                 </div>
                 <!-- Email -->
@@ -34,7 +34,7 @@
                         <input id="email" name="email" type="email"
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                 class="validate" required>
-                        <label for="email">Email</label>
+                        <label for="email" class="label">Email</label>
                     </div>
                 </div>
                 <!-- Register Button -->

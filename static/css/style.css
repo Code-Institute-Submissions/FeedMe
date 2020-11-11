@@ -565,3 +565,111 @@ a.btn-large.add-recipe:hover{
         font-size: 15px;
     }
 }
+
+/* --------- Medium Screens --- */
+@media (min-width: 720px) and (max-width: 1024px){
+    .btn-lg{
+        font-size: 20px;
+        width: 180px;
+    }
+
+    a.brand-logo{
+        font-size: 30px;
+    }
+
+    .caption h1{
+        font-size: 60px;
+    }
+
+    a.brand-logo.center-align.deep-orange-text.text-lighten-2{
+        font-size: 40px;
+    }
+
+    h4{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .sidenav li a{
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    form.col.s12.m10.l8.offset-m1.offset-l2{
+        margin-top: 50px;
+    }
+
+    label.active,
+    label.label{
+        font-size: 25px;
+    }
+
+    .input-field #username,
+    .input-field #password,
+    .input-field #email{
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    i.fas.fa-user.prefix,
+    i.fas.fa-key.prefix,
+    i.far.fa-user.prefix,
+    i.fas.fa-at.prefix{
+        font-size: 40px;
+        margin-top: 15px;
+    }
+    
+    button.btn-small{
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    p.center.align.no-account,
+    p.center.align{
+        font-size: 20px;
+    }
+
+    i.fas.fa-book-open{
+        font-size: 2.5rem;
+        padding-right: 10px;
+    }
+
+    label.search-bar{
+        font-size: 20px;
+    }
+
+    div.col.s12.m12.l12.total-results{
+        font-size: 25px;
+    }
+
+    .card .card-content .card-title{
+        font-size: 30px;
+    }
+
+    h5.recipe-description{
+        font-size: 25px;
+    }
+
+    .btn-recipe{
+        width: 120px;
+        font-size: 18px;
+    }
+
+    div.recipe-details{
+        margin-top: 50px;
+        font-size: 20px;
+    }
+
+    div.col.s12.m12{
+        font-size: 20px;
+    }
+
+    div.row.card-panel{
+        max-width: 90%;
+    }
+
+    a.btn-large.add-recipe{
+        font-size: 20px;
+        margin: 20px;
+    }
+}

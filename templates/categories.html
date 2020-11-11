@@ -15,10 +15,12 @@
         </div>
     </div>
     <!-- End Add Categories Button -->
+
+    <!-- Categories-->
         {% if categories|length > 0 %}
         <div class="row center-align">
             {% for category in categories %}
-                <div class="col s12 m4 l3">
+                <div class="col s12 m12 l3">
             <div class="card">
                 <div class="card-image">
                     <img src="{{category.category_image}}" alt="{{category.category_name}}">

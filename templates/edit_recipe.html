@@ -21,7 +21,7 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-                    <label for="category_name">Recipe Category</label>
+                    <label for="category_name" class="label">Recipe Category</label>
                 </div>
             </div>
             <!-- Recipe Name -->
@@ -80,7 +80,7 @@
                     <i class="far fa-clock prefix deep-orange-text text-lighten-3"></i>
                     <input type="time" id="time" name="time" value="{{ recipe.time }}"
                         class="form-control validate" required>
-                    <label for="time">Preparation Time (HH:MM)</label>
+                    <label for="time">Time</label>
                 </div>
                 <!-- Dificulty -->
                 <div class="input-field col s6">
@@ -95,7 +95,7 @@
                             {% endif %}
                         {% endfor %}
                     </select>
-                    <label for="difficulty"></label>
+                    <label for="difficulty" class="label">Difficulty</label>
                 </div>
             </div>
             <!-- Submit Recipe Button -->
