@@ -30,6 +30,10 @@ body {
     line-height: 42px;
 }
 
+.btn{
+    background-color: transparent;
+}
+
 /* ----------------------------------------------- Navigation bar --- */
 
 nav .brand-logo,
@@ -209,10 +213,6 @@ div.input-field.col.s12 #password{
     font-family: "Varela Round", sans-serif;
 }
 
-.btn-small{
-    font-family: "Varela Round", sans-serif;
-}
-
 .deep-orange-text.text-darken-4{
     font-weight: 600;
 }
@@ -225,9 +225,8 @@ p.center.align{
     margin: 0 auto;
     display: flex;
     border-radius: 23px;
-    font-family: 'Varela Round';
+    font-family: "Varela Round", sans-serif;
     font-weight: 600;
-    background-color: #ffa083;
     color: white;
 }
 
@@ -262,8 +261,7 @@ h5.recipe-description{
 button.btn.btn-recipe.search,
 a.btn.btn-recipe.reset,
 a.btn.btn-recipe.modal-trigger.delete{
-    background-color: #c62828;
-    color: white;
+    color: #c62828;
     font-family: "Varela Round", sans-serif;
 }
 
@@ -276,14 +274,13 @@ a.btn.btn-recipe.reset:hover{
 
 button.btn.btn-recipe.search,
 a.btn.btn-recipe.edit{
-    background-color: #4db6ac;
-    color: white;
+    border: 2px solid #4db6ac;
+    color: #4db6ac;
     font-family: "Varela Round", sans-serif;
 }
 
 button.btn.btn-recipe.search:hover,
 a.btn.btn-recipe.edit:hover{
-  background-color:white;
   color: #4db6ac;
   border: 1px solid white;
 }
@@ -341,31 +338,31 @@ a.check-tools{
 
 a.btn.btn-recipe.edit,
 a.btn-recipe.btn-small.neutral.modal-close.ed{
-    background-color: #4db6ac;
-    color: white;
-    display: inline-block;
-}
-
-a.btn.btn-recipe.modal-trigger.delete,
-a.btn-recipe.btn-small.neutral.modal-close.del{
-    color: white;
-    background-color: #c62828;
+    border: 1px solid #4db6ac;
     display: inline-block;
 }
 
 a.btn.btn-recipe.edit:hover,
 a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
-  background-color:white;
-  color: #4db6ac;
-  border: 1px solid white;
+  background-color:#4db6ac;
+  color:white;
   display: inline-block;
 }
 
+a.btn.btn-recipe.modal-trigger.delete,
+a.btn-recipe.btn-small.neutral.modal-close.del{
+    border-color: 1px solid #c62828;
+    background-color: white;
+    color: #c62828;
+    display: inline-block;
+}
+
+
 a.btn.btn-recipe.modal-trigger.delete:hover,
-a.btn-recipe.btn-small.neutral.modal-close:hover{
-  background-color:white;
+a.btn-recipe.btn-small.neutral.modal-close.del:hover{
+  border: 1px solid #c62828;
+  background-color: white;
   color: #c62828;
-  border: 1px solid white;
   display: inline-block;
 }
 
@@ -427,8 +424,8 @@ h4.red-text.text-darken-4.center-align{
 /* ----------------------------------------------- EDIT RECIPE --- */
 
 a.btn.modal-trigger.btn-cancel-recipe{
-    color: white;
-    background-color: #c62828;
+    color: #c62828;
+    border: 1px solid #c62828;
     font-family: "Varela Round", sans-serif;
     font-weight: bold;
     border-radius: 23px;
