@@ -49,9 +49,9 @@
     <!-- End Search Results-->
 
     <!-- User Recipes --------------------->
-    <div class="row center-align">
+    <div class="row center-align" style="max-width: 80%;">
         {% for recipe in recipes %}
-        <div class="col s12 m12 l3">
+        <div class="col s12 m12 l4">
             <div class="card">
                 <div class="card-image">
                     <a href="{{url_for('recipe', recipe_id=recipe._id)}}">

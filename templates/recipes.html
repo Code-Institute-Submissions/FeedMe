@@ -35,9 +35,9 @@
 
     <!-- User Recipes --------------------->
     {% if recipes|length > 0 %}
-    <div class="row center-align">
+    <div class="row center-align" style="max-width: 80%;">
         {% for recipe in recipes %}
-        <div class="col s12 m12 l3">
+        <div class="col s12 m12 l4">
             <div class="card">
                 <div class="card-image">
                     <img src="{{recipe.recipe_image}}" alt="{{ recipe.recipe_name }}">
