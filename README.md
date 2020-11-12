@@ -2,9 +2,7 @@
 
 Welcome to my third website!
 
-This website was built as a **development milestone project** for the completion of the Data Centric Development module and it's part of the learning material for Code Institute's Fullstack Web Developer program.
-
-A live **desktop demo** can be found [here](https://gaspar91.github.io/FeedMe/).
+This website was built as a **development milestone project** for the completion of the Data Centric Development module and it's part of the learning material for [Code Institute's](https://codeinstitute.net/about-us/) Fullstack Web Developer program.
 
 The **source code** for this project can be found [here](https://github.com/gaspar91/FeedMe).
 
@@ -56,7 +54,7 @@ It's important to know which recipes are mine and which are not, by having an ed
 
 ### User Story Five:
 
-As a user I would like to add, edit or delete my own recipes.
+As a user I would like to add, edit, update or delete my own recipes.
 
 ### User Story Six:
 
@@ -64,7 +62,7 @@ It's important that the recipes have photos to help users to have an idea of wha
 
 ### User Story Seven:
 
-As a user it is important that I have the necessary information to cook a recipe, such as what ingredients I might need, how long does it take to make it, the steps I need to take and for how many people does it serve.
+As a user it is important that I have the necessary information to cook a recipe, such as what ingredients I might need, how long does it take to make it and the steps I need to take.
 
 ### User Story Eight:
 
@@ -95,7 +93,7 @@ As a user I would like to know more about what cooking tools are necessary to ha
 - When the user is logged in, all the pages contain a navigation bar with the logo in the top corner left and the user can now access the other pages in the top center of the screen.
 - In order to ensure that the user first knows what the website has to offer the homepage contains a “Start” button, In the middle of the screen, that leads to the "Login" page.
 - In case the user doesn't have an account yet, it can be redirected to the register page and create an account.
-- The "Profile" page provides a welcoming message with the user's name, along with a profile picture and the recipes that the user has added.
+- The "Profile" page provides a welcoming message with the user's name and the recipes that the user has added.
 - The "Add Recipe" opens up a form where the user can create a new recipe.
 - The user can search for its own recipes in the profile page.
 - The user can only edit and delete recipes that belong to them.
@@ -152,10 +150,10 @@ As a user I would like to know more about what cooking tools are necessary to ha
 
 **1. Logo:**
 
-   1. If you're logged out go to a page that is not the homepage.
+   1. If you're logged out, go to a page that is not the homepage.
    2. Try to click on the logo and verify that it leads you to the homepage.
-   3. If you're logged in go to a page that is not the recipes page.
-   4. Try to click on the logo and verify that it leads you to the recipes.
+   3. If you're logged in, go to a page that is not the recipes page.
+   4. Try to click on the logo and verify that it leads you to the recipes page.
 
 **2. Navigation Bar Pages:**
 
@@ -181,7 +179,7 @@ As a user I would like to know more about what cooking tools are necessary to ha
    3. Try to change the information in any field.
    4. Try to click on the cancel button and verify that a pop up message appears asking if you're sure you want to cancel.
    5. Try to click yes and verify that it leads you back to your profile, or click no and verify that you continue to edit the recipe.
-   6. Try to click on the done button and verify that a confirmation message appears and you can see the new changes.
+   6. Try to click on the save button and verify that a confirmation message appears and you can see the new changes.
    7. Go to your profile and verify that your recipe was edited.
 
 **5. Delete Recipe:**
@@ -228,9 +226,9 @@ As a user I would like to know more about what cooking tools are necessary to ha
 **10. Edit Profile:**
 
    1. Go to your profile and press the edit button and verify that it leads you to the edit profile with a form containing your information.
-   2. Change your name and/or image and press save and verify that it leads you back to your profile with a confirmation message and your username and image have been updated.
-   3. Try to login with your new username and verify that it confirms it.
-   4. Try to login with you old username and verify that the username doesn't exist.
+   2. Change your password and/or email and press save and verify that it leads you back to your profile with a confirmation message.
+   3. Try to login with your username and new password and verify that it confirms it.
+   4. Try to login with your old password and verify that a message appears suggesting that your username or password is incorrect.
 
 **11. Delete Profile:**
 
@@ -345,7 +343,8 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
         - **PORT = 5000**
         - **SECRET_KEY = [Secret key]**
 
-    11. Go to the Deploy tab and **Deploy Branch**, ensuring that the master branch is selected.
+
+   11. Go to the Deploy tab and **Deploy Branch**, ensuring that the master branch is selected.
 
 # Credits
 
