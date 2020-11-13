@@ -221,16 +221,17 @@ p.center.align{
     margin-top: 0px;
 }
 
-.btn-small{
+button.btn-small{
+    background-color: #ffa083;
+    color: white;
     margin: 0 auto;
     display: flex;
     border-radius: 23px;
     font-family: "Varela Round", sans-serif;
     font-weight: 600;
-    color: white;
 }
 
-.btn-small:hover{
+button.btn-small:hover{
     background-color: white;
     color: #ffa083;
 }
@@ -273,15 +274,18 @@ a.btn.btn-recipe.reset:hover{
 }
 
 button.btn.btn-recipe.search,
-a.btn.btn-recipe.edit{
-    border: 2px solid #4db6ac;
+a.btn.btn-recipe.edit,
+button.btn.btn-recipe.edit{
+    border: 1px solid #4db6ac;
     color: #4db6ac;
     font-family: "Varela Round", sans-serif;
 }
 
 button.btn.btn-recipe.search:hover,
-a.btn.btn-recipe.edit:hover{
+a.btn.btn-recipe.edit:hover,
+button.btn.btn-recipe.edit:hover{
   color: #4db6ac;
+  background-color: white;
   border: 1px solid white;
 }
 
@@ -344,8 +348,8 @@ a.btn-recipe.btn-small.neutral.modal-close.ed{
 
 a.btn.btn-recipe.edit:hover,
 a.btn-recipe.btn-small.neutral.modal-close.ed:hover{
-  background-color:#4db6ac;
-  color:white;
+  background-color:white;
+  color:#4db6ac;
   display: inline-block;
 }
 
@@ -465,8 +469,9 @@ img.image-shadow.tool-image{
 /* ----------------------------------------------- CATEGORIES --- */
 
 a.btn-large.add-recipe{
-    background-color: #4db6ac;
-    color: white;
+    background-color: transparent;
+    border: 1px solid #4db6ac;
+    color: #4db6ac;
     border-radius: 25px;
  
 }
