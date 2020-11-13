@@ -4,6 +4,8 @@ Welcome to my third website!
 
 This website was built as a **development milestone project** for the completion of the Data Centric Development module and it's part of the learning material for [Code Institute's](https://codeinstitute.net/about-us/) Fullstack Web Developer program.
 
+A live **desktop demo** can be found [here](https://fidemi.herokuapp.com/).
+
 The **source code** for this project can be found [here](https://github.com/gaspar91/FeedMe).
 
 
@@ -112,7 +114,7 @@ As a user I would like to know more about what cooking tools are necessary to ha
 - I would like it to be possible for users to upload images from their phone or computer instead of inserting a URL.
 - I would like it to be possible to add a feature to each recipe in order for the user to share it on social media or with contacts.
 - It would be a positive experience for the user if each recipe had a comment section so other users could comment about the recipe.
-
+- In the future I would like to limit the amount of recipes, tools and categories in a page in order to implement pagination.
 
 # Technologies Used
 
@@ -246,7 +248,7 @@ As a user I would like to know more about what cooking tools are necessary to ha
 
 - The website has been checked for responsiveness on a multitude of screen sizes from PC to portable devices, such as tablets and mobile phones.
 
-- All HTML code was run through the [W3C HTML Validator](https://validator.w3.org/) and returned no errors.
+- All HTML code was run through the [W3C HTML Validator](https://validator.w3.org/) and returned some errors about the pages not starting with a document type declaration.
 
 
 # Deployment
